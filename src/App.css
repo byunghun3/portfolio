@@ -1,38 +1,24 @@
 .App {
+  height: 100vh;
   text-align: center;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.sectionOne {
+  height: 100vh;
+  background-color: red;
+  scroll-snap-align: start;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.sectionTwo {
+  height: 100vh;
+  background-color: blue;
+  scroll-snap-align: start;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.sectionThree {
+  height: 100vh;
+  background-color: green;
+  scroll-snap-align: start;
 }
