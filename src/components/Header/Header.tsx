@@ -4,8 +4,8 @@ import { AppBar, Toolbar } from "@mui/material";
 import { styled } from "@mui/system";
 
 interface HeaderProps {
-  // projectsHash: string
-  // contactHash: string
+  projectsHash: string
+  contactHash: string
 }
 
 const Navbar = styled(Toolbar)({
@@ -13,7 +13,7 @@ const Navbar = styled(Toolbar)({
   backgroundColor: "black"
 });
 
-export const Header: FC<HeaderProps> = ({ }) => {
+export const Header: FC<HeaderProps> = ({ projectsHash, contactHash }) => {
   return (
     <div>
       <AppBar
@@ -21,10 +21,10 @@ export const Header: FC<HeaderProps> = ({ }) => {
         elevation={0}
       >
         <Navbar>
-          <NavHashLink to="projectsHash">
+          <NavHashLink to={projectsHash}>
             Projects
           </NavHashLink>
-          <NavHashLink to="contactHash">
+          <NavHashLink to={contactHash}>
             Contact
           </NavHashLink>
         </Navbar>
