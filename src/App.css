@@ -1,14 +1,18 @@
 .App {
-  height: 100vh;
   text-align: center;
+  scroll-behavior: smooth;
+}
+
+.sectionsContainer {
+  height: 100vh;
   scroll-snap-type: y mandatory;
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
 }
 
 .sectionOne {
   height: 100vh;
   background-color: red;
-  scroll-snap-align: start;
+  /* scroll-snap-align: start; */
 }
 
 .sectionTwo {
@@ -18,7 +22,12 @@
 }
 
 .sectionThree {
-  height: 100vh;
+  position: relative;
+  height: 200vh;
   background-color: green;
   scroll-snap-align: start;
+}
+
+.scroll {
+  position: absolute;
 }
