@@ -6,13 +6,13 @@
 .sectionsContainer {
   height: 100vh;
   scroll-snap-type: y mandatory;
-  /* overflow-y: scroll; */
+  overflow-y: scroll;
 }
 
 .sectionOne {
   height: 100vh;
-  background-color: red;
-  /* scroll-snap-align: start; */
+  background-color: white;
+  scroll-snap-align: start;
 }
 
 .sectionTwo {

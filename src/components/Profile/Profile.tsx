@@ -12,9 +12,13 @@ export const Profile = (props: Props) => {
                 projectsHash="#projects"
                 contactHash="#contact"
             />
-            Hello, my name is Byung-Hun Kim
+            <div>
+            Hi, I&apos;m Byung-Hun Kim
+
+
             <LinkedInIcon />
             <GitHubIcon />
+            </div>
         </div>
     );
 };
