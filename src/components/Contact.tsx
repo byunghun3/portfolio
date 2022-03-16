@@ -1,5 +1,5 @@
 import React from "react";
-import { BackToTop } from "../BackToTop/BackToTop";
+import { BackToTop } from "./BackToTop";
 
 type Props = {}
 
