@@ -2,6 +2,8 @@ import React, { FC, useContext } from "react";
 import { NavHashLink } from "react-router-hash-link";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import { ThemeContext } from "../contexts/ThemeContext";
+import RevdBookstore from "../assets/images/revd-bookstore.png";
+import GolfCourseWeather from "../assets/images/golf-course-weather.png";
 import styled from "styled-components";
 
 interface ProjectProps {
@@ -20,20 +22,25 @@ const Content = styled.div`
 
 const PageTitle = styled.div`
     flex: 1;
+    margin-top: 1.5rem;
     font-size: 3rem;
 `;
 
 const ProjectsCards = styled.div`
-    flex: 3;
+    flex: 5;
     display: flex;
     justify-content: space-around;
     align-items: center;
     min-width: 100%;
-    border: solid black;
+    margin-top: -8.5rem;
 `;
 
 const Card = styled.div`
-    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 70vh;
     min-width: 25vw;
     border: solid gray 0.2rem;
 `;
@@ -42,12 +49,16 @@ const Title = styled.div`
     font-size: 2rem;
 `;
 
-const Demo = styled.button`
-    font-size: 2rem;
+const ProjectImg = styled.img`
+    width: 35rem;
 `;
 
-const Link = styled.a`
-    text-decoration: none;
+const Buttons = styled.div`
+    display: flex;
+`;
+
+const Demo = styled.button`
+    font-size: 2rem;
 `;
 
 const Code = styled.button`
@@ -84,28 +95,36 @@ export const Projects: FC<ProjectProps> = ({ profileHash }) => {
             <ProjectsCards>
                 <Card>
                     <Title>Revd Bookstore</Title>
-                    <Link href="https://byunghun3.github.io/revd-bookstore/">
-                        <Demo type="button">Demo</Demo>
-                    </Link>
-                    <a href="https://github.com/byunghun3/revd-bookstore">
-                        <Code type="button">Code</Code>
-                    </a>
+                    <ProjectImg src={RevdBookstore} />
+                    <Buttons>
+                        <a href="https://byunghun3.github.io/revd-bookstore/">
+                            <Demo type="button">Demo</Demo>
+                        </a>
+                        <a href="https://github.com/byunghun3/revd-bookstore">
+                            <Code type="button">Code</Code>
+                        </a>
+                    </Buttons>
                 </Card>
                 <Card>
                     <Title>Golf Course Weather</Title>
-                    <a href="https://byunghun3.github.io/golf-course-weather/">
-                        <Demo type="button">Demo</Demo>
-                    </a>
-                    <a href="https://github.com/byunghun3/golf-course-weather">
-                        <Code type="button">Code</Code>
-                    </a>
+                    <ProjectImg src={GolfCourseWeather} />
+                    <Buttons>
+                        <a href="https://byunghun3.github.io/golf-course-weather/">
+                            <Demo type="button">Demo</Demo>
+                        </a>
+                        <a href="https://github.com/byunghun3/golf-course-weather">
+                            <Code type="button">Code</Code>
+                        </a>
+                    </Buttons>
                 </Card>
                 <Card>
                     <Title>Portfolio</Title>
-                    <Demo type="button">Demo</Demo>
-                    <a href="https://github.com/byunghun3/portfolio">
-                        <Code type="button">Code</Code>
-                    </a>
+                    <Buttons>
+                        <Demo type="button">Demo</Demo>
+                        <a href="https://github.com/byunghun3/portfolio">
+                            <Code type="button">Code</Code>
+                        </a>
+                    </Buttons>
                 </Card>
             </ProjectsCards>
             <NavHashLink smooth to={profileHash}>
