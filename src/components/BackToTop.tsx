@@ -1,8 +1,10 @@
-import React from "react";
+import React, { FC } from "react";
 
-type Props = {}
+interface Props {
+    onClick: React.MouseEventHandler<HTMLButtonElement>
+}
 
-export const BackToTop = (props: Props) => {
+export const BackToTop: FC<Props> = ({ onClick }) => {
     const handleScroll = () => {
         window.scrollBy(0, -window.innerHeight);
         // window.scrollBy({
@@ -12,6 +14,6 @@ export const BackToTop = (props: Props) => {
         // });
     };
     return (
-        <div><button onClick={handleScroll}>top</button></div>
+        <div><button onClick={onClick}>top</button></div>
     );
 };

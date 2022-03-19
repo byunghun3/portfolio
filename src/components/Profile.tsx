@@ -2,6 +2,7 @@ import React, { FC, useEffect, useContext } from "react";
 import { NavHashLink } from "react-router-hash-link";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
+import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import { ThemeContext } from "../contexts/ThemeContext";
 import { Header } from "./Header";
 import DownArrow from "../assets/icons/Black-doodle-arrow-isolated-on-transparent-background-PNG.png";
@@ -44,8 +45,12 @@ const ScrollButton = styled.button`
     position: absolute;
     right: 5%;
     bottom: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: none;
     background: none;
+    color: ${(props) => props.isDarkMode ? "white" : "black"};
     &:hover {
         cursor: pointer;
     }
@@ -74,8 +79,14 @@ export const Profile: FC<ProfileProps> = ({ projectsHash }) => {
                 <Greeting>Hi, I&apos;m Byung-Hun Kim</Greeting>
                 <Intro>A self-taught front-end developer who is hungry to learn, challenge, and create.</Intro>
                 <NavHashLink smooth to={projectsHash}>
-                    <ScrollButton type="button" onClick={handleClick}>
-                        <Arrow src={DownArrow} />Projects</ScrollButton>
+                    <ScrollButton type="button" onClick={handleClick} isDarkMode={isDarkMode}>
+                        {/* <Arrow src={DownArrow} /> */}
+                        <ArrowDownwardIcon
+                            sx={{
+                                fontSize: "3rem"
+                            }}
+                        />
+                        Projects</ScrollButton>
                 </NavHashLink>
                 <Links>
                     <Resume type="button">Resume</Resume>
