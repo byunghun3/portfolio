@@ -58,11 +58,23 @@ const Buttons = styled.div`
 `;
 
 const Demo = styled.button`
+    border: solid ${(props) => props.isDarkMode ? "white" : "black"};
+    background-color: ${(props) => props.isDarkMode ? "black" : "white"};
+    color: ${(props) => props.isDarkMode ? "white" : "black"};
     font-size: 2rem;
+    &:hover {
+        cursor: pointer;
+    }
 `;
 
 const Code = styled.button`
+    border: solid ${(props) => props.isDarkMode ? "white" : "black"};
+    background-color: ${(props) => props.isDarkMode ? "black" : "white"};
+    color: ${(props) => props.isDarkMode ? "white" : "black"};
     font-size: 2rem;
+    &:hover {
+        cursor: pointer;
+    }
 `;
 
 const ScrollButton = styled.button`
@@ -97,11 +109,11 @@ export const Projects: FC<ProjectProps> = ({ profileHash }) => {
                     <Title>Revd Bookstore</Title>
                     <ProjectImg src={RevdBookstore} />
                     <Buttons>
-                        <a href="https://byunghun3.github.io/revd-bookstore/">
-                            <Demo type="button">Demo</Demo>
+                        <a href="https://byunghun3.github.io/revd-bookstore/" target="_blank" rel="noopener noreferrer">
+                            <Demo type="button" isDarkMode={isDarkMode}>Demo</Demo>
                         </a>
-                        <a href="https://github.com/byunghun3/revd-bookstore">
-                            <Code type="button">Code</Code>
+                        <a href="https://github.com/byunghun3/revd-bookstore" target="_blank" rel="noopener noreferrer">
+                            <Code type="button" isDarkMode={isDarkMode}>Code</Code>
                         </a>
                     </Buttons>
                 </Card>
@@ -109,20 +121,20 @@ export const Projects: FC<ProjectProps> = ({ profileHash }) => {
                     <Title>Golf Course Weather</Title>
                     <ProjectImg src={GolfCourseWeather} />
                     <Buttons>
-                        <a href="https://byunghun3.github.io/golf-course-weather/">
-                            <Demo type="button">Demo</Demo>
+                        <a href="https://byunghun3.github.io/golf-course-weather/" target="_blank" rel="noopener noreferrer">
+                            <Demo type="button" isDarkMode={isDarkMode}>Demo</Demo>
                         </a>
-                        <a href="https://github.com/byunghun3/golf-course-weather">
-                            <Code type="button">Code</Code>
+                        <a href="https://github.com/byunghun3/golf-course-weather" target="_blank" rel="noopener noreferrer">
+                            <Code type="button" isDarkMode={isDarkMode}>Code</Code>
                         </a>
                     </Buttons>
                 </Card>
                 <Card>
                     <Title>Portfolio</Title>
                     <Buttons>
-                        <Demo type="button">Demo</Demo>
-                        <a href="https://github.com/byunghun3/portfolio">
-                            <Code type="button">Code</Code>
+                        <Demo type="button" isDarkMode={isDarkMode}>Demo</Demo>
+                        <a href="https://github.com/byunghun3/portfolio" target="_blank" rel="noopener noreferrer">
+                            <Code type="button" isDarkMode={isDarkMode}>Code</Code>
                         </a>
                     </Buttons>
                 </Card>

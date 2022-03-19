@@ -5,6 +5,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import { ThemeContext } from "../contexts/ThemeContext";
 import { Header } from "./Header";
+import ResumePDF from "../assets/docs/resume.pdf";
 import DownArrow from "../assets/icons/Black-doodle-arrow-isolated-on-transparent-background-PNG.png";
 import styled from "styled-components";
 
@@ -38,7 +39,13 @@ const Links = styled.div`
 `;
 
 const Resume = styled.button`
+    border: solid ${(props) => props.isDarkMode ? "white" : "black"};
+    background-color: ${(props) => props.isDarkMode ? "black" : "white"};
+    color: ${(props) => props.isDarkMode ? "white" : "black"};
     font-size: 2rem;
+    &:hover {
+        cursor: pointer;
+    }
 `;
 
 const ScrollButton = styled.button`
@@ -89,9 +96,28 @@ export const Profile: FC<ProfileProps> = ({ projectsHash }) => {
                         Projects</ScrollButton>
                 </NavHashLink>
                 <Links>
-                    <Resume type="button">Resume</Resume>
-                    <LinkedInIcon />
-                    <GitHubIcon />
+                    <a href={ResumePDF} target="_blank" rel="noopener noreferrer">
+                        <Resume type="button" isDarkMode={isDarkMode}>Resume</Resume>
+                    </a>
+                    <LinkedInIcon
+                        sx={{
+                            margin: "0 0.7rem",
+                            color: "#0072b1",
+                            fontSize: "3rem",
+                            "&:hover": {
+                                cursor: "pointer"
+                            }
+                        }}
+                    />
+                    <GitHubIcon
+                        sx={{
+                            margin: "0 0.7rem",
+                            fontSize: "3rem",
+                            "&:hover": {
+                                cursor: "pointer"
+                            }
+                        }}
+                    />
                 </Links>
 
             </Content>
