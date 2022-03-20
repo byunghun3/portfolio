@@ -16,7 +16,7 @@ interface ProfileProps {
 const Content = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     min-height: 92vh;
     background-color: ${(props) => props.isDarkMode ? "black" : "white"};
@@ -25,25 +25,38 @@ const Content = styled.div`
 
 const Greeting = styled.div`
     display: flex;
-    font-size: 4rem;
+    font-family: "Russo One";
+    font-size: 7rem;
 `;
 
 const Intro = styled.div`
     display: flex;
-    font-size: 2.5rem;
+    margin-top: 10rem;
+    font-family: "Josefin Sans";
+    font-size: 3rem;
 `;
 
 const Links = styled.div`
     display: flex;
+    align-items: center;
+    margin-top: 10rem;
     margin-bottom: 2rem;
 `;
 
 const Resume = styled.button`
-    border: solid ${(props) => props.isDarkMode ? "white" : "black"};
+    height: 5rem;
+    width: 10rem;
+    margin: 0 1rem;
+    // margin: 0 0.7rem;
+    border: solid ${(props) => props.isDarkMode ? "white" : "black"} 0.2rem;
+    border-radius: 0.3rem;
     background-color: ${(props) => props.isDarkMode ? "black" : "white"};
     color: ${(props) => props.isDarkMode ? "white" : "black"};
+    font-family: "Josefin Sans";
     font-size: 2rem;
     &:hover {
+        background-color: ${(props) => props.isDarkMode ? "white" : "black"};
+        color: ${(props) => props.isDarkMode ? "black" : "white"};
         cursor: pointer;
     }
 `;
@@ -51,14 +64,17 @@ const Resume = styled.button`
 const ScrollButton = styled.button`
     position: absolute;
     right: 5%;
-    bottom: 10%;
+    bottom: 5%;
     display: flex;
     justify-content: center;
     align-items: center;
     border: none;
     background: none;
     color: ${(props) => props.isDarkMode ? "white" : "black"};
+    font-family: "Josefin Sans";
+    font-size: 2rem;
     &:hover {
+        transform: scale(1.25);
         cursor: pointer;
     }
 `;
@@ -83,8 +99,8 @@ export const Profile: FC<ProfileProps> = ({ projectsHash }) => {
                 contactHash="#contact"
             />
             <Content isDarkMode={isDarkMode}>
-                <Greeting>Hi, I&apos;m Byung-Hun Kim</Greeting>
-                <Intro>A self-taught front-end developer who is hungry to learn, challenge, and create.</Intro>
+                <Greeting>Hello, I&apos;m Byung-Hun Kim</Greeting>
+                <Intro>A self-taught front-end developer.<br /><br /> Hungry to learn, challenge, and create.</Intro>
                 <NavHashLink smooth to={projectsHash}>
                     <ScrollButton type="button" onClick={handleClick} isDarkMode={isDarkMode}>
                         {/* <Arrow src={DownArrow} /> */}
@@ -101,19 +117,27 @@ export const Profile: FC<ProfileProps> = ({ projectsHash }) => {
                     </a>
                     <LinkedInIcon
                         sx={{
-                            margin: "0 0.7rem",
+                            margin: "0 1rem",
+                            // margin: "0 0.7rem",
                             color: "#0072b1",
-                            fontSize: "3rem",
+                            fontSize: "5rem",
                             "&:hover": {
+                                borderRadius: "0.5rem",
+                                backgroundColor: "#0072b1",
+                                color: "white",
                                 cursor: "pointer"
                             }
                         }}
                     />
                     <GitHubIcon
                         sx={{
-                            margin: "0 0.7rem",
-                            fontSize: "3rem",
+                            margin: "0 1rem",
+                            // margin: "0 0.7rem",
+                            fontSize: "5rem",
                             "&:hover": {
+                                borderRadius: "0.5rem",
+                                backgroundColor: `${isDarkMode ? "white" : "black"}`,
+                                color: `${isDarkMode ? "black" : "white"}`,
                                 cursor: "pointer"
                             }
                         }}
