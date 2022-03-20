@@ -7,12 +7,11 @@ import EmailIcon from "@mui/icons-material/Email";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import { ThemeContext } from "../contexts/ThemeContext";
-// import { styled } from "@mui/system";
 import styled from "styled-components";
 
 interface HeaderProps {
   projectsHash: string
-  contactHash: string
+  storyHash: string
 }
 
 const Navbar = styled.div`
@@ -30,7 +29,8 @@ const Navbar = styled.div`
 const Contact = styled.div`
   display: flex;
   justify-content: flex-start;
-  width: 50%;
+  width: 60%;
+  // border: solid white;
 `;
 
 const Phone = styled.div`
@@ -40,10 +40,6 @@ const Phone = styled.div`
   width: 30%;
 `;
 
-// const StyledPhoneIcon = styled.PhoneIcon`
-//   font-size: 10rem;
-// `;
-
 const Email = styled.div`
   display: flex;
   justify-content: flex-start;
@@ -51,31 +47,51 @@ const Email = styled.div`
   width: 30%;
 `;
 
+const NavLinks = styled.div`
+  display: flex;
+  // justify-content: center;
+  justify-content: flex-start;
+  align-items: center;
+  width: 30%;
+  color: ${(props) => props.isDarkMode ? "black" : "white"};
+  // border: solid white;
+`;
+
+const LinkButton = styled.button`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 4rem;
+    border: none;
+    background: none;
+    color: ${(props) => props.isDarkMode ? "black" : "white"};
+    font-family: "Josefin Sans";
+    font-size: 2.7rem;
+    &:hover {
+        color: ${(props) => props.isDarkMode ? "white" : "lightblue"};
+        transform: scale(1.25);
+        cursor: pointer;
+    }
+`;
+
 const ThemeSwitch = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  width: 50%;
+  width: 10%;
 `;
 
-// const Switch = styled.input`
-//   width: 2rem;
-// `;
-
-// const Navbar = styled(Toolbar)({
-//   justifyContent: "end",
-//   backgroundColor: "black"
-// });
-
-export const Header: FC<HeaderProps> = ({ projectsHash, contactHash }) => {
+export const Header: FC<HeaderProps> = ({ projectsHash, storyHash }) => {
   const { isDarkMode, setIsDarkMode } = useContext(ThemeContext);
+
+  const handleClick = () => {
+    setTimeout(() => {
+      history.pushState("", document.title, window.location.pathname + window.location.search);
+    }, 1);
+  };
 
   return (
     <div>
-      {/* <AppBar
-        position="sticky"
-        elevation={0}
-      > */}
       <Navbar
         isDarkMode={isDarkMode}
       >
@@ -83,7 +99,7 @@ export const Header: FC<HeaderProps> = ({ projectsHash, contactHash }) => {
           <Phone>
             <PhoneIcon
               sx={{
-                margin: "0 0.7rem 0 2rem",
+                margin: "0 0.7rem 0 3rem",
                 fontSize: "2.5rem"
               }}
             />
@@ -92,43 +108,55 @@ export const Header: FC<HeaderProps> = ({ projectsHash, contactHash }) => {
           <Email>
             <EmailIcon
               sx={{
-                margin: "0 0.7rem 0 2rem",
+                margin: "0 0.7rem 0 0",
                 fontSize: "2.5rem"
               }}
             />
             byunghun3@gmail.com
           </Email>
         </Contact>
+        <NavLinks>
+          <NavHashLink
+            smooth
+            to={projectsHash}
+            style={{
+              textDecoration: "none"
+            }}>
+            <LinkButton type="button" onClick={handleClick} isDarkMode={isDarkMode}>
+              Projects
+            </LinkButton>
+          </NavHashLink>
+          <NavHashLink
+            smooth
+            to={storyHash}
+            style={{
+              textDecoration: "none"
+            }}>
+            <LinkButton type="button" onClick={handleClick} isDarkMode={isDarkMode}>
+              Story
+            </LinkButton>
+          </NavHashLink>
+        </NavLinks>
         <ThemeSwitch>
           <Switch
             color="primary"
             onChange={() => { setIsDarkMode(!isDarkMode); }}
-          // type="checkbox"
           />
           {isDarkMode ?
             <DarkModeIcon
               sx={{
-                margin: "0 2rem 0 0.7rem",
+                margin: "0 4rem 0 0.7rem",
                 fontSize: "2.7rem"
               }}
             /> :
             <LightModeIcon
               sx={{
-                margin: "0 2rem 0 0.7rem",
+                margin: "0 4rem 0 0.7rem",
                 fontSize: "2.7rem"
               }}
             />}
         </ThemeSwitch>
-        {/* <div className="links"> */}
-        {/* <NavHashLink smooth to={projectsHash}>
-          Projects
-        </NavHashLink> */}
-        {/* <NavHashLink smooth to={contactHash}>
-            Contact
-          </NavHashLink> */}
-        {/* </div> */}
       </Navbar >
-      {/* </AppBar> */}
     </div >
   );
 };

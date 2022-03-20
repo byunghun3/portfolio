@@ -94,10 +94,6 @@ const ScrollDownButton = styled.button`
     }
 `;
 
-const Arrow = styled.img`
-    width: 5rem;
-`;
-
 export const Profile: FC<ProfileProps> = ({ projectsHash }) => {
     const { isDarkMode } = useContext(ThemeContext);
 
@@ -111,7 +107,7 @@ export const Profile: FC<ProfileProps> = ({ projectsHash }) => {
         <Page>
             <Header
                 projectsHash="#projects"
-                contactHash="#contact"
+                storyHash="#story"
             />
             <Content isDarkMode={isDarkMode}>
                 <Greeting>Hello, I&apos;m Byung-Hun Kim</Greeting>
