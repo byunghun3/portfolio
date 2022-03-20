@@ -22,7 +22,8 @@ const Navbar = styled.div`
   min-height: 8vh;
   background-color: ${(props) => props.isDarkMode ? "lightblue" : "black"};
   color: ${(props) => props.isDarkMode ? "black" : "white"};
-  font-size: 1.7rem;
+  font-family: "Josefin Sans";
+  font-size: 1.9rem;
   transition: ease 0.3s;
 `;
 
@@ -35,6 +36,7 @@ const Contact = styled.div`
 const Phone = styled.div`
   display: flex;
   justify-content: flex-start;
+  align-items: center;
   width: 30%;
 `;
 
@@ -45,6 +47,7 @@ const Phone = styled.div`
 const Email = styled.div`
   display: flex;
   justify-content: flex-start;
+  align-items: center;
   width: 30%;
 `;
 
@@ -81,7 +84,7 @@ export const Header: FC<HeaderProps> = ({ projectsHash, contactHash }) => {
             <PhoneIcon
               sx={{
                 margin: "0 0.7rem 0 2rem",
-                fontSize: "2rem"
+                fontSize: "2.5rem"
               }}
             />
             201-786-8979
@@ -90,7 +93,7 @@ export const Header: FC<HeaderProps> = ({ projectsHash, contactHash }) => {
             <EmailIcon
               sx={{
                 margin: "0 0.7rem 0 2rem",
-                fontSize: "2rem"
+                fontSize: "2.5rem"
               }}
             />
             byunghun3@gmail.com
@@ -98,7 +101,7 @@ export const Header: FC<HeaderProps> = ({ projectsHash, contactHash }) => {
         </Contact>
         <ThemeSwitch>
           <Switch
-            color={isDarkMode ? "primary" : "error"}
+            color="primary"
             onChange={() => { setIsDarkMode(!isDarkMode); }}
           // type="checkbox"
           />
@@ -106,13 +109,13 @@ export const Header: FC<HeaderProps> = ({ projectsHash, contactHash }) => {
             <DarkModeIcon
               sx={{
                 margin: "0 2rem 0 0.7rem",
-                fontSize: "2.5rem"
+                fontSize: "2.7rem"
               }}
             /> :
             <LightModeIcon
               sx={{
                 margin: "0 2rem 0 0.7rem",
-                fontSize: "2.5rem"
+                fontSize: "2.7rem"
               }}
             />}
         </ThemeSwitch>
@@ -123,9 +126,9 @@ export const Header: FC<HeaderProps> = ({ projectsHash, contactHash }) => {
         {/* <NavHashLink smooth to={contactHash}>
             Contact
           </NavHashLink> */}
-    {/* </div> */}
+        {/* </div> */}
       </Navbar >
-  {/* </AppBar> */ }
+      {/* </AppBar> */}
     </div >
   );
 };
