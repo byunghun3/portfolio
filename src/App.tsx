@@ -5,7 +5,6 @@ import { Projects } from "./components/Projects";
 import { Story } from "./components/Story";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import "./App.css";
-import { BackToTop } from "./components/BackToTop";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -42,7 +41,9 @@ function App() {
             />
           </Section>
           <Section id="story">
-            <Story />
+            <Story
+              profileHash="#profile"
+            />
           </Section>
         </Container>
       </div>

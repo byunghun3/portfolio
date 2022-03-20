@@ -13,7 +13,7 @@ interface ProjectProps {
     profileHash: string
 }
 
-const Content = styled.div`
+const Page = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -181,7 +181,7 @@ export const Projects: FC<ProjectProps> = ({ profileHash }) => {
     };
 
     return (
-        <Content isDarkMode={isDarkMode}>
+        <Page isDarkMode={isDarkMode}>
             <PageTitle>Projects</PageTitle>
             <ProjectsCards>
                 <Card>
@@ -246,6 +246,6 @@ export const Projects: FC<ProjectProps> = ({ profileHash }) => {
                     </ScrollDownButton>
                 </NavHashLink>
             </ScrollContainer>
-        </Content>
+        </Page>
     );
 };
