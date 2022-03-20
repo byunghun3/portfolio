@@ -19,7 +19,7 @@ const Navbar = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  min-height: 8vh;
+  height: 8vh;
   background-color: ${(props) => props.isDarkMode ? "lightblue" : "black"};
   color: ${(props) => props.isDarkMode ? "black" : "white"};
   font-family: "Josefin Sans";

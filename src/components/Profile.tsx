@@ -13,6 +13,11 @@ interface ProfileProps {
     projectsHash: string
 }
 
+const Page = styled.div`
+    height: 100vh;
+    scroll-snap-align: start;
+`;
+
 const Content = styled.div`
     display: flex;
     flex-direction: column;
@@ -61,10 +66,20 @@ const Resume = styled.button`
     }
 `;
 
-const ScrollButton = styled.button`
-    position: absolute;
-    right: 5%;
-    bottom: 5%;
+const ScrollContainer = styled.div`
+    width: 90%;
+    margin-top: 4rem;
+    margin-bottom: -4rem;
+    // border: solid orange;
+`;
+
+const ScrollDownButton = styled.button`
+    // position: absolute;
+    // right: 5%;
+    // bottom: 5;
+    float: right;
+    // margin-left: 100rem;
+    margin-right: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -93,7 +108,7 @@ export const Profile: FC<ProfileProps> = ({ projectsHash }) => {
     };
 
     return (
-        <div>
+        <Page>
             <Header
                 projectsHash="#projects"
                 contactHash="#contact"
@@ -101,16 +116,6 @@ export const Profile: FC<ProfileProps> = ({ projectsHash }) => {
             <Content isDarkMode={isDarkMode}>
                 <Greeting>Hello, I&apos;m Byung-Hun Kim</Greeting>
                 <Intro>A self-taught front-end developer.<br /><br /> Hungry to learn, challenge, and create.</Intro>
-                <NavHashLink smooth to={projectsHash}>
-                    <ScrollButton type="button" onClick={handleClick} isDarkMode={isDarkMode}>
-                        {/* <Arrow src={DownArrow} /> */}
-                        <ArrowDownwardIcon
-                            sx={{
-                                fontSize: "3rem"
-                            }}
-                        />
-                        Projects</ScrollButton>
-                </NavHashLink>
                 <Links>
                     <a href={ResumePDF} target="_blank" rel="noopener noreferrer">
                         <Resume type="button" isDarkMode={isDarkMode}>Resume</Resume>
@@ -143,8 +148,19 @@ export const Profile: FC<ProfileProps> = ({ projectsHash }) => {
                         }}
                     />
                 </Links>
-
+                <ScrollContainer>
+                    <NavHashLink smooth to={projectsHash}>
+                        <ScrollDownButton type="button" onClick={handleClick} isDarkMode={isDarkMode}>
+                            <ArrowDownwardIcon
+                                sx={{
+                                    fontSize: "3rem"
+                                }}
+                            />
+                            Projects
+                        </ScrollDownButton>
+                    </NavHashLink>
+                </ScrollContainer>
             </Content>
-        </div>
+        </Page>
     );
 };

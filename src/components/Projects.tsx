@@ -1,6 +1,7 @@
 import React, { FC, useContext } from "react";
 import { NavHashLink } from "react-router-hash-link";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
+import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import { ThemeContext } from "../contexts/ThemeContext";
 import RevdBookstore from "../assets/images/revd-bookstore.png";
 import GolfCourseWeather from "../assets/images/golf-course-weather.png";
@@ -17,9 +18,10 @@ const Content = styled.div`
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    min-height: 100vh;
+    height: 100vh;
     background-color: ${(props) => props.isDarkMode ? "black" : "white"};
     color: ${(props) => props.isDarkMode ? "white" : "black"};
+    scroll-snap-align: start;
 `;
 
 const PageTitle = styled.div`
@@ -122,10 +124,39 @@ const Code = styled.button`
     }
 `;
 
-const ScrollButton = styled.button`
-    position: absolute;
-    right: 5%;
-    bottom: -95%;
+const ScrollContainer = styled.div`
+    width: 90%;
+    // margin-top: 3rem;
+    margin-bottom: 3rem;
+    // border: solid orange;
+`;
+
+const ScrollUpButton = styled.button`
+    // position: absolute;
+    // right: 5%;
+    // bottom: -95%;
+    float: right;
+    margin-right: 2rem;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    color: ${(props) => props.isDarkMode ? "white" : "black"};
+    font-family: "Josefin Sans";
+    font-size: 2rem;
+    &:hover {
+        transform: scale(1.25);
+        cursor: pointer;
+    }
+`;
+
+const ScrollDownButton = styled.button`
+    // position: absolute;
+    // right: 5%;
+    // bottom: -95%;
+    float: right;
+    margin-right: 2rem;
     border: none;
     display: flex;
     justify-content: center;
@@ -203,16 +234,18 @@ export const Projects: FC<ProjectProps> = ({ profileHash }) => {
                     </Buttons>
                 </Card>
             </ProjectsCards>
-            <NavHashLink smooth to={profileHash}>
-                <ScrollButton type="button" onClick={handleClick} isDarkMode={isDarkMode}>
-                    {/* <Arrow src={DownArrow} /> */}
-                    <ArrowUpwardIcon
-                        sx={{
-                            fontSize: "3rem"
-                        }}
-                    />
-                    Profile</ScrollButton>
-            </NavHashLink>
+            <ScrollContainer>
+                <NavHashLink smooth to={profileHash}>
+                    <ScrollDownButton type="button" onClick={handleClick} isDarkMode={isDarkMode}>
+                        <ArrowUpwardIcon
+                            sx={{
+                                fontSize: "3rem"
+                            }}
+                        />
+                        Profile
+                    </ScrollDownButton>
+                </NavHashLink>
+            </ScrollContainer>
         </Content>
     );
 };
