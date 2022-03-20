@@ -4,6 +4,8 @@ import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import { ThemeContext } from "../contexts/ThemeContext";
 import RevdBookstore from "../assets/images/revd-bookstore.png";
 import GolfCourseWeather from "../assets/images/golf-course-weather.png";
+import PortfolioDark from "../assets/images/portfolio-dark.png";
+import PortfolioLight from "../assets/images/portfolio-light.png";
 import styled from "styled-components";
 
 interface ProjectProps {
@@ -22,8 +24,9 @@ const Content = styled.div`
 
 const PageTitle = styled.div`
     flex: 1;
-    margin-top: 1.5rem;
-    font-size: 3rem;
+    margin-top: 2.5rem;
+    font-family: "Russo One";
+    font-size: 4rem;
 `;
 
 const ProjectsCards = styled.div`
@@ -32,7 +35,7 @@ const ProjectsCards = styled.div`
     justify-content: space-around;
     align-items: center;
     min-width: 100%;
-    margin-top: -8.5rem;
+    margin-top: -10.5rem;
 `;
 
 const Card = styled.div`
@@ -40,17 +43,45 @@ const Card = styled.div`
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    min-height: 70vh;
+    min-height: 65vh;
     min-width: 25vw;
-    border: solid gray 0.2rem;
+    // border: solid #F8F8FF 0.4rem;
+    border-radius: 2rem;
+    // box-shadow: 0.2rem 0.2rem 2rem 0.2rem rgb(185, 205, 255);
+    box-shadow: 0 0 2rem rgb(185, 205, 255);
 `;
 
 const Title = styled.div`
-    font-size: 2rem;
+    margin: 1rem 0;
+    font-size: 2.3rem;
+    font-weight: 700;
 `;
 
 const ProjectImg = styled.img`
+    margin-top: -3rem;
     width: 35rem;
+    border-radius: 0.5rem;
+`;
+
+const Stack = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-size: 1.8rem;
+    // border: solid black;
+    text-align: center;
+
+    div {
+        margin: 0.8rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        // border: solid green;
+        // color: red;
+    }
 `;
 
 const Buttons = styled.div`
@@ -58,21 +89,35 @@ const Buttons = styled.div`
 `;
 
 const Demo = styled.button`
-    border: solid ${(props) => props.isDarkMode ? "white" : "black"};
+    height: 5rem;
+    width: 10rem;
+    margin: 0 0.7rem;
+    border: solid ${(props) => props.isDarkMode ? "white" : "black"} 0.2rem;
+    border-radius: 0.3rem;
     background-color: ${(props) => props.isDarkMode ? "black" : "white"};
     color: ${(props) => props.isDarkMode ? "white" : "black"};
+    font-family: "Josefin Sans";
     font-size: 2rem;
     &:hover {
+        background-color: ${(props) => props.isDarkMode ? "white" : "black"};
+        color: ${(props) => props.isDarkMode ? "black" : "white"};
         cursor: pointer;
     }
 `;
 
 const Code = styled.button`
-    border: solid ${(props) => props.isDarkMode ? "white" : "black"};
+    height: 5rem;
+    width: 10rem;
+    margin: 0 0.7rem;
+    border: solid ${(props) => props.isDarkMode ? "white" : "black"} 0.2rem;
+    border-radius: 0.3rem;
     background-color: ${(props) => props.isDarkMode ? "black" : "white"};
     color: ${(props) => props.isDarkMode ? "white" : "black"};
+    font-family: "Josefin Sans";
     font-size: 2rem;
     &:hover {
+        background-color: ${(props) => props.isDarkMode ? "white" : "black"};
+        color: ${(props) => props.isDarkMode ? "black" : "white"};
         cursor: pointer;
     }
 `;
@@ -80,14 +125,17 @@ const Code = styled.button`
 const ScrollButton = styled.button`
     position: absolute;
     right: 5%;
-    bottom: -90%;
+    bottom: -95%;
     border: none;
     display: flex;
     justify-content: center;
     align-items: center;
     background: none;
     color: ${(props) => props.isDarkMode ? "white" : "black"};
+    font-family: "Josefin Sans";
+    font-size: 2rem;
     &:hover {
+        transform: scale(1.25);
         cursor: pointer;
     }
 `;
@@ -108,6 +156,12 @@ export const Projects: FC<ProjectProps> = ({ profileHash }) => {
                 <Card>
                     <Title>Revd Bookstore</Title>
                     <ProjectImg src={RevdBookstore} />
+                    <Stack>
+                        <div>React</div>
+                        <div>Typescript</div>
+                        <div>CSS Module</div>
+                        <div>MUI</div>
+                    </Stack>
                     <Buttons>
                         <a href="https://byunghun3.github.io/revd-bookstore/" target="_blank" rel="noopener noreferrer">
                             <Demo type="button" isDarkMode={isDarkMode}>Demo</Demo>
@@ -120,6 +174,10 @@ export const Projects: FC<ProjectProps> = ({ profileHash }) => {
                 <Card>
                     <Title>Golf Course Weather</Title>
                     <ProjectImg src={GolfCourseWeather} />
+                    <Stack>
+                        <div>React (class components)</div>
+                        <div>SASS</div>
+                    </Stack>
                     <Buttons>
                         <a href="https://byunghun3.github.io/golf-course-weather/" target="_blank" rel="noopener noreferrer">
                             <Demo type="button" isDarkMode={isDarkMode}>Demo</Demo>
@@ -131,6 +189,12 @@ export const Projects: FC<ProjectProps> = ({ profileHash }) => {
                 </Card>
                 <Card>
                     <Title>Portfolio</Title>
+                    <ProjectImg src={isDarkMode ? PortfolioLight : PortfolioDark} />
+                    <Stack>
+                        <div>React</div>
+                        <div>Typescript</div>
+                        <div>Styled-Components</div>
+                    </Stack>
                     <Buttons>
                         <Demo type="button" isDarkMode={isDarkMode}>Demo</Demo>
                         <a href="https://github.com/byunghun3/portfolio" target="_blank" rel="noopener noreferrer">
