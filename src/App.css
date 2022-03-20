@@ -2,32 +2,3 @@
   text-align: center;
   scroll-behavior: smooth;
 }
-
-.sectionsContainer {
-  height: 100vh;
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
-}
-
-.sectionOne {
-  height: 100vh;
-  background-color: white;
-  scroll-snap-align: start;
-}
-
-.sectionTwo {
-  height: 100vh;
-  background-color: blue;
-  scroll-snap-align: start;
-}
-
-.sectionThree {
-  position: relative;
-  height: 200vh;
-  background-color: green;
-  scroll-snap-align: start;
-}
-
-.scroll {
-  position: absolute;
-}
