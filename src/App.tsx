@@ -12,6 +12,11 @@ const Container = styled.div`
   height: 100vh;
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
+  // overflow: auto;
+
+        //     &::-webkit-scrollbar{
+        //     display: none;
+        // }
 `;
 
 const Section = styled.div`
@@ -25,11 +30,13 @@ function App() {
       <div className="App">
         <Container>
           <Section id="profile">
+            {/* a */}
             <Profile
               projectsHash="#projects"
             />
           </Section>
           <Section id="projects">
+            {/* b */}
             <Projects
               profileHash="#profile"
             />
