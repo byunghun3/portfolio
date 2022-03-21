@@ -19,12 +19,18 @@ interface ProjectProps {
     profileHash: string
 }
 
+const FullPage = styled.div`
+    min-height: 100vh;
+    scroll-snap-align: start;
+
+`;
+
 const Page = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     background-color: ${(props) => props.isDarkMode ? "black" : "white"};
     color: ${(props) => props.isDarkMode ? "white" : "black"};
     scroll-snap-align: start;
@@ -39,6 +45,10 @@ const PageTitle = styled.div`
     margin-top: 2.5rem;
     font-family: "Russo One";
     font-size: 4rem;
+
+    @media (max-width: 450px) {
+        padding-top: 2rem;
+    }
 `;
 
 const ProjectsCards = styled.div<SliderProps>`
@@ -46,9 +56,10 @@ const ProjectsCards = styled.div<SliderProps>`
     display: flex;
     justify-content: space-around;
     align-items: center;
+    // min-height: 100vh;
     // max-width: 100%;
     width: 100%;
-    margin-top: -10.5rem;
+    // border: solid blue;
 
     @media (max-width: 1000px) {
         // flex-direction: column;
@@ -57,10 +68,15 @@ const ProjectsCards = styled.div<SliderProps>`
         max-width: 100%;
         overflow: hidden;
     }
+
+    @media (max-height: 599px) {
+        padding: 5rem 0;
+    }
 `;
 
 const Slider = styled.div`
     // display: none;
+    // min-height: 100vh;
 
     @media (max-width: 1000px) {
         display: flex;
@@ -78,9 +94,11 @@ const Card = styled.div`
     justify-content: space-around;
     align-items: center;
     // height: 65vh;
-    min-height: 65vh;
+    min-height: 45rem;
+    // min-height: 65vh;
     width: 25vw;
     // border: solid #F8F8FF 0.4rem;
+    margin-top: -5rem;
     border-radius: 2rem;
     // box-shadow: 0.2rem 0.2rem 2rem 0.2rem rgb(185, 205, 255);
     box-shadow: 0 0 2rem rgb(185, 205, 255);
@@ -88,11 +106,21 @@ const Card = styled.div`
     @media (max-width: 1000px) {
         min-height: 80vh;
         min-width: 50vw;
-        // margin-top: 3rem;
+        margin-top: 0;
+        padding-bottom: 1rem;
     }
 
     @media (max-width: 625px) {
         min-width: 70vw;
+    }
+
+    @media (max-width: 450px) {
+        min-height: 65vh;
+    }
+
+    @media (max-height: 599px) {
+        min-height: 45rem;
+        margin-top: 0;
     }
 `;
 
@@ -112,6 +140,10 @@ const ProjectImg = styled.img`
     width: 95%;
     // width: 35rem;
     border-radius: 0.5rem;
+
+    @media (max-width: 1000px) {
+        margin-top: 0;
+    }
 `;
 
 const Stack = styled.div`
@@ -138,7 +170,7 @@ const Stack = styled.div`
 
     @media (max-width: 1000px) {
         // justify-content: space-around;
-        margin-top: -1rem;
+        // margin-top: -1rem;
         font-size: 2.2rem;
 
         div {
@@ -147,7 +179,7 @@ const Stack = styled.div`
     }
 
     @media (max-height: 599px) {
-        display: none;
+        // display: none;
     }
 `;
 
@@ -183,10 +215,16 @@ const Demo = styled.button`
     }
 
     @media (max-width: 1000px) {
-        min-height: 7rem;
-        width: 12rem;
+        // min-height: 7rem;
+        // width: 12rem;
         // margin: 0 0.7rem;
         font-size: 2.3rem;
+    }
+
+    @media (max-width: 300px) {
+        min-height: 2rem;
+        width: 7rem;
+        font-size: 2rem;
     }
 `;
 
@@ -209,10 +247,16 @@ const Code = styled.button`
     }
 
     @media (max-width: 1000px) {
-        height: 7rem;
-        width: 12rem;
+        // height: 7rem;
+        // width: 12rem;
         // margin: 0 0.2rem;
         font-size: 2.3rem;
+    }
+
+    @media (max-width: 300px) {
+        min-height: 2rem;
+        width: 7rem;
+        font-size: 2rem;
     }
 `;
 
@@ -284,7 +328,8 @@ export const Projects: FC<ProjectProps> = ({ profileHash }) => {
     };
 
     return (
-        <Page isDarkMode={isDarkMode}>
+        // <FullPage>
+        <Page id="projects" isDarkMode={isDarkMode}>
             <PageTitle>Projects</PageTitle>
             <ProjectsCards>
                 <Slider newSlideOrder={slideOrder}>
@@ -455,5 +500,6 @@ export const Projects: FC<ProjectProps> = ({ profileHash }) => {
                 </NavHashLink>
             </ScrollContainer> */}
         </Page>
+        // </FullPage>
     );
 };
