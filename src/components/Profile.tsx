@@ -14,7 +14,7 @@ interface ProfileProps {
 }
 
 const Page = styled.div`
-    height: 100vh;
+    min-height: 100vh;
     scroll-snap-align: start;
 `;
 
@@ -30,6 +30,8 @@ const Content = styled.div`
 
 const Greeting = styled.div`
     display: flex;
+    margin-top: 2rem;
+    padding: 0 1rem;
     font-family: "Russo One";
     font-size: 7rem;
 `;
@@ -37,6 +39,7 @@ const Greeting = styled.div`
 const Intro = styled.div`
     display: flex;
     margin-top: 10rem;
+    padding: 0 0.5rem;
     font-family: "Josefin Sans";
     font-size: 3rem;
 `;
@@ -104,7 +107,7 @@ export const Profile: FC<ProfileProps> = ({ projectsHash }) => {
     };
 
     return (
-        <Page>
+        <Page id="profile">
             <Header
                 projectsHash="#projects"
                 storyHash="#story"

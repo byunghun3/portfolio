@@ -9,18 +9,30 @@ import styled from "styled-components";
 
 const Container = styled.div`
   height: 100vh;
+  width: 100%;
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
-  // overflow: auto;
 
-        //     &::-webkit-scrollbar{
-        //     display: none;
-        // }
+  @media (max-height: 599px), (max-width: 499px) {
+    // min-height: 100vh;
+    // display: block;
+    scroll-snap-type: none;
+    overflow-y: visible;
+    // background-color: purple;
+  }
+
+  // @media (max-width: 499px) {
+  //   min-height: 100vh;
+    // scroll-snap-type: none;
+    // overflow-y: visible;
+  // }
 `;
 
 const Section = styled.div`
-  height: 100vh;
-  scroll-snap-align: start;
+      display: flex;
+    flex-direction: column;
+    // min-height: 100vh;
+  // scroll-snap-align: start;
 `;
 
 function App() {
@@ -28,23 +40,23 @@ function App() {
     <ThemeProvider>
       <div className="App">
         <Container>
-          <Section id="profile">
-            {/* a */}
-            <Profile
-              projectsHash="#projects"
-            />
-          </Section>
-          <Section id="projects">
-            {/* b */}
-            <Projects
-              profileHash="#profile"
-            />
-          </Section>
-          <Section id="story">
-            <Story
-              profileHash="#profile"
-            />
-          </Section>
+          {/* <Section id="profile"> */}
+          {/* a */}
+          <Profile
+            projectsHash="#projects"
+          />
+          {/* </Section> */}
+          {/* <Section id="projects"> */}
+          {/* b */}
+          <Projects
+            profileHash="#profile"
+          />
+          {/* </Section> */}
+          {/* <Section id="story"> */}
+          <Story
+            profileHash="#profile"
+          />
+          {/* </Section> */}
         </Container>
       </div>
     </ThemeProvider>

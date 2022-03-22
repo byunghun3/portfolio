@@ -5,6 +5,12 @@ html {
   font-size: 62.5%;
 }
 
+@media (max-height: 599px), (max-width: 499px) {
+  html {
+    overflow: visible;
+  }
+}
+
 body {
   margin: 0;
   font-family: 'Josefin Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
