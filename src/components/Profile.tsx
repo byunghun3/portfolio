@@ -1,17 +1,10 @@
-import React, { FC, useEffect, useContext } from "react";
-import { NavHashLink } from "react-router-hash-link";
+import React, { FC, useContext } from "react";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import { ThemeContext } from "../contexts/ThemeContext";
 import { Header } from "./Header";
 import ResumePDF from "../assets/docs/resume.pdf";
-import DownArrow from "../assets/icons/Black-doodle-arrow-isolated-on-transparent-background-PNG.png";
 import styled from "styled-components";
-
-interface ProfileProps {
-    projectsHash: string
-}
 
 const Page = styled.div`
     min-height: 100vh;
@@ -49,19 +42,22 @@ const Links = styled.div`
     align-items: center;
     margin-top: 10rem;
     margin-bottom: 2rem;
+
+    a {
+        margin: 0 1rem;
+    }
 `;
 
 const Resume = styled.button`
     height: 5rem;
     width: 10rem;
-    margin: 0 1rem;
-    // margin: 0 0.7rem;
     border: solid ${(props) => props.isDarkMode ? "white" : "black"} 0.2rem;
     border-radius: 0.3rem;
     background-color: ${(props) => props.isDarkMode ? "black" : "white"};
     color: ${(props) => props.isDarkMode ? "white" : "black"};
     font-family: "Josefin Sans";
     font-size: 2rem;
+    
     &:hover {
         background-color: ${(props) => props.isDarkMode ? "white" : "black"};
         color: ${(props) => props.isDarkMode ? "black" : "white"};
@@ -69,42 +65,8 @@ const Resume = styled.button`
     }
 `;
 
-const ScrollContainer = styled.div`
-    width: 90%;
-    margin-top: 4rem;
-    margin-bottom: -4rem;
-    // border: solid orange;
-`;
-
-const ScrollDownButton = styled.button`
-    // position: absolute;
-    // right: 5%;
-    // bottom: 5;
-    float: right;
-    // margin-left: 100rem;
-    margin-right: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: none;
-    background: none;
-    color: ${(props) => props.isDarkMode ? "white" : "black"};
-    font-family: "Josefin Sans";
-    font-size: 2rem;
-    &:hover {
-        transform: scale(1.25);
-        cursor: pointer;
-    }
-`;
-
-export const Profile: FC<ProfileProps> = ({ projectsHash }) => {
+export const Profile: FC = () => {
     const { isDarkMode } = useContext(ThemeContext);
-
-    const handleClick = () => {
-        setTimeout(() => {
-            history.pushState("", document.title, window.location.pathname + window.location.search);
-        }, 1);
-    };
 
     return (
         <Page id="profile">
@@ -119,46 +81,35 @@ export const Profile: FC<ProfileProps> = ({ projectsHash }) => {
                     <a href={ResumePDF} target="_blank" rel="noopener noreferrer">
                         <Resume type="button" isDarkMode={isDarkMode}>Resume</Resume>
                     </a>
-                    <LinkedInIcon
-                        sx={{
-                            margin: "0 1rem",
-                            // margin: "0 0.7rem",
-                            color: "#0072b1",
-                            fontSize: "5rem",
-                            "&:hover": {
-                                borderRadius: "0.5rem",
-                                backgroundColor: "#0072b1",
-                                color: "white",
-                                cursor: "pointer"
-                            }
-                        }}
-                    />
-                    <GitHubIcon
-                        sx={{
-                            margin: "0 1rem",
-                            // margin: "0 0.7rem",
-                            fontSize: "5rem",
-                            "&:hover": {
-                                borderRadius: "0.5rem",
-                                backgroundColor: `${isDarkMode ? "white" : "black"}`,
-                                color: `${isDarkMode ? "black" : "white"}`,
-                                cursor: "pointer"
-                            }
-                        }}
-                    />
+                    <a href={"https://www.linkedin.com/in/byung-hun-kim-a3809a143/"} target="_blank" rel="noopener noreferrer">
+                        <LinkedInIcon
+                            sx={{
+                                color: "#0072b1",
+                                fontSize: "5rem",
+                                "&:hover": {
+                                    borderRadius: "0.5rem",
+                                    backgroundColor: "#0072b1",
+                                    color: `${isDarkMode ? "white" : "black"}`,
+                                    cursor: "pointer"
+                                }
+                            }}
+                        />
+                    </a>
+                    <a href={"https://github.com/byunghun3"} target="_blank" rel="noopener noreferrer">
+                        <GitHubIcon
+                            sx={{
+                                color: `${isDarkMode ? "white" : "black"}`,
+                                fontSize: "5rem",
+                                "&:hover": {
+                                    borderRadius: "0.5rem",
+                                    backgroundColor: `${isDarkMode ? "white" : "black"}`,
+                                    color: `${isDarkMode ? "black" : "white"}`,
+                                    cursor: "pointer"
+                                }
+                            }}
+                        />
+                    </a>
                 </Links>
-                <ScrollContainer>
-                    <NavHashLink smooth to={projectsHash}>
-                        <ScrollDownButton type="button" onClick={handleClick} isDarkMode={isDarkMode}>
-                            <ArrowDownwardIcon
-                                sx={{
-                                    fontSize: "3rem"
-                                }}
-                            />
-                            Projects
-                        </ScrollDownButton>
-                    </NavHashLink>
-                </ScrollContainer>
             </Content>
         </Page>
     );

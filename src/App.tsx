@@ -42,9 +42,7 @@ function App() {
         <Container>
           {/* <Section id="profile"> */}
           {/* a */}
-          <Profile
-            projectsHash="#projects"
-          />
+          <Profile />
           {/* </Section> */}
           {/* <Section id="projects"> */}
           {/* b */}
