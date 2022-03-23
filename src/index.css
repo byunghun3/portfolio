@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Bungee&family=Russo+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Bungee&family=Russo+One&family=Inter&display=swap');
 
 html {
   overflow: hidden;
   font-size: 62.5%;
 }
 
-@media (max-height: 599px), (max-width: 499px) {
+@media (max-height: 599px), (max-width: 600px) {
   html {
     overflow: visible;
   }

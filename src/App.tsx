@@ -13,7 +13,7 @@ const Container = styled.div`
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
 
-  @media (max-height: 599px), (max-width: 499px) {
+  @media (max-height: 599px), (max-width: 600px) {
     // min-height: 100vh;
     // display: block;
     scroll-snap-type: none;

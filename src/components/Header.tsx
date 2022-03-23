@@ -102,7 +102,7 @@ const LinkButton = styled.button`
         cursor: pointer;
     }
 
-    @media (max-width: 499px) {
+    @media (max-width: 480px) {
       font-size: 4rem;
     }
 `;
@@ -279,7 +279,7 @@ export const Header: FC<HeaderProps> = ({ projectsHash, storyHash }) => {
               margin: "5rem 0"
             },
 
-            "@media (max-width: 499px)": {
+            "@media (max-width: 480px)": {
               width: "100%",
               fontSize: "2.7rem"
             }
@@ -324,7 +324,7 @@ export const Header: FC<HeaderProps> = ({ projectsHash, storyHash }) => {
               // margin: "0 0.7rem 0 3rem",
               margin: "0 0.7rem 0 0",
               fontSize: "2.5rem",
-              "@media (max-width: 499px)": {
+              "@media (max-width: 480px)": {
                 fontSize: "3.5rem"
               }
             }}
@@ -336,7 +336,7 @@ export const Header: FC<HeaderProps> = ({ projectsHash, storyHash }) => {
             sx={{
               margin: "0 0.7rem 0 0",
               fontSize: "2.5rem",
-              "@media (max-width: 499px)": {
+              "@media (max-width: 480px)": {
                 fontSize: "3.5rem"
               }
             }}
