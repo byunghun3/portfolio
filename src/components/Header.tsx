@@ -1,5 +1,4 @@
 import React, { FC, useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { NavHashLink } from "react-router-hash-link";
 import { Switch, Drawer } from "@mui/material";
 import PhoneIcon from "@mui/icons-material/Phone";
@@ -33,13 +32,10 @@ const Contact = styled.div`
   flex: 2;
   display: flex;
   justify-content: flex-start;
-  // width: 30%;
   padding: 0 1.5rem;
-  // border: solid white;
 
   @media (max-width: 1050px) {
     justify-content: space-between;
-    // width: 45%;
   }
 
   @media (max-width: 875px) {
@@ -52,7 +48,6 @@ const Phone = styled.div`
   justify-content: flex-start;
   align-items: center;
   margin-right: 2rem;
-  // width: 30%;
 `;
 
 const Email = styled.div`
@@ -60,25 +55,15 @@ const Email = styled.div`
   justify-content: flex-start;
   align-items: center;
   margin-left: 2rem;
-  // width: 30%;
 `;
 
 const NavLinks = styled.div`
   flex: 2;
   display: flex;
-  // justify-content: center;
   justify-content: flex-end;
   align-items: center;
-  // width: 30%;
-  // margin-right: -15rem;
   padding: 0 1.5rem;
   color: ${(props) => props.isDarkMode ? "black" : "white"};
-  // border: solid white;
-
-  @media (max-width: 950px) {
-    // margin-left: -5rem;
-    // width: 25%;
-  }
 
   @media (max-width: 875px) {
     display: none;
@@ -86,25 +71,25 @@ const NavLinks = styled.div`
 `;
 
 const LinkButton = styled.button`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 4rem;
-    border: none;
-    background: none;
-    color: ${(props) => props.isDarkMode ? "black" : "white"};
-    font-family: "Josefin Sans";
-    font-size: 2.7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 4rem;
+  border: none;
+  background: none;
+  color: ${(props) => props.isDarkMode ? "black" : "white"};
+  font-family: "Josefin Sans";
+  font-size: 2.7rem;
     
-    &:hover {
-        color: ${(props) => props.isDarkMode ? "white" : "lightblue"};
-        transform: scale(1.25);
-        cursor: pointer;
-    }
+  &:hover {
+    color: ${(props) => props.isDarkMode ? "white" : "lightblue"};
+    transform: scale(1.25);
+    cursor: pointer;
+  }
 
-    @media (max-width: 480px) {
-      font-size: 4rem;
-    }
+  @media (max-width: 480px) {
+    font-size: 4rem;
+  }
 `;
 
 const ThemeSwitch = styled.div`
@@ -112,7 +97,6 @@ const ThemeSwitch = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  // border: solid white;
 
   @media (max-width: 875px) {
     justify-content: flex-start;
@@ -128,24 +112,6 @@ const MenuContainer = styled.div`
     display: flex;
     justify-content: flex-end;
     padding-right: 2rem;
-    // border: solid white;
-  }
-`;
-
-const ExpandedMenu = styled.div`
-  position: absolute;
-  top: 0;
-  right: 0;
-  float: right;
-  display: flex;
-  flex-direction: column;
-  height: 500rem;
-  width: 30vw;
-  background-color: black;
-  color: white;
-
-  &:backdrop {
-    background: rgba(255,0,0,.25);
   }
 `;
 
@@ -167,17 +133,11 @@ export const Header: FC<HeaderProps> = ({ projectsHash, storyHash }) => {
   };
 
   const handleExpandMenu = () => {
-    // setTimeout(() => { setIsExpanded(!isExpanded); }, 200);
     setIsExpanded(true);
-    // document.body.style.overflowY = "hidden";
-    // document.body.style.scrollSnapType = "none";
-    // document.body.setAttribute("style", "color: red; height: 50vh;");
-    // document.body.style.fontSize = "50rem";
   };
 
   const handleCloseMenu = () => {
     setIsExpanded(false);
-    // document.body.style.overflow = "visible";
   };
 
   return (
@@ -189,7 +149,6 @@ export const Header: FC<HeaderProps> = ({ projectsHash, storyHash }) => {
           <Phone>
             <PhoneIcon
               sx={{
-                // margin: "0 0.7rem 0 3rem",
                 margin: "0 0.7rem 0 0",
                 fontSize: "2.5rem"
               }}
@@ -257,8 +216,6 @@ export const Header: FC<HeaderProps> = ({ projectsHash, storyHash }) => {
           />
         </MenuContainer>
       </Navbar >
-      {/* {isExpanded && */}
-      {/* <ExpandedMenu> */}
       <Drawer
         anchor="right"
         open={isExpanded}
@@ -272,7 +229,6 @@ export const Header: FC<HeaderProps> = ({ projectsHash, storyHash }) => {
             backgroundColor: `${isDarkMode ? "lightblue" : "black"}`,
             color: `${isDarkMode ? "black" : "white"}`,
             fontSize: "2rem",
-            // overflowWrap: "break-word",
             wordBreak: "break-word",
 
             "& > *:not(:first-child)": {
@@ -321,7 +277,6 @@ export const Header: FC<HeaderProps> = ({ projectsHash, storyHash }) => {
         <Phone>
           <PhoneIcon
             sx={{
-              // margin: "0 0.7rem 0 3rem",
               margin: "0 0.7rem 0 0",
               fontSize: "2.5rem",
               "@media (max-width: 480px)": {
@@ -343,9 +298,7 @@ export const Header: FC<HeaderProps> = ({ projectsHash, storyHash }) => {
           />
           byunghun3@gmail.com
         </Email>
-        {/* </ExpandedMenu> */}
       </Drawer>
-      {/* } */}
     </div >
   );
 };
