@@ -23,7 +23,6 @@ const Navbar = styled.div`
   padding: 0.7rem 0;
   background-color: ${(props) => props.isDarkMode ? "lightblue" : "black"};
   color: ${(props) => props.isDarkMode ? "black" : "white"};
-  font-family: "Josefin Sans";
   font-size: 1.9rem;
   transition: ease 0.3s;
 `;
@@ -87,17 +86,16 @@ const LinkButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 4rem;
   border: none;
   background: none;
   color: ${(props) => props.isDarkMode ? "black" : "white"};
   font-family: "Josefin Sans";
   font-size: 2.7rem;
-    
+  cursor: pointer;
+
   &:hover {
     color: ${(props) => props.isDarkMode ? "white" : "lightblue"};
     transform: scale(1.25);
-    cursor: pointer;
   }
 
   @media (max-width: 480px) {
@@ -190,6 +188,7 @@ export const Header: FC<HeaderProps> = ({ projectsHash, storyHash }) => {
             smooth
             to={projectsHash}
             style={{
+              margin: "0 4rem",
               textDecoration: "none"
             }}>
             <LinkButton type="button" onClick={handleClick} isDarkMode={isDarkMode}>
@@ -200,6 +199,7 @@ export const Header: FC<HeaderProps> = ({ projectsHash, storyHash }) => {
             smooth
             to={storyHash}
             style={{
+              margin: "0 4rem",
               textDecoration: "none"
             }}>
             <LinkButton type="button" onClick={handleClick} isDarkMode={isDarkMode}>

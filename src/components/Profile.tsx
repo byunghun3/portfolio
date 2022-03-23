@@ -57,11 +57,11 @@ const Resume = styled.button`
     color: ${(props) => props.isDarkMode ? "white" : "black"};
     font-family: "Josefin Sans";
     font-size: 2rem;
+    cursor: pointer;
     
     &:hover {
         background-color: ${(props) => props.isDarkMode ? "white" : "black"};
         color: ${(props) => props.isDarkMode ? "black" : "white"};
-        cursor: pointer;
     }
 `;
 
@@ -86,11 +86,12 @@ export const Profile: FC = () => {
                             sx={{
                                 color: "#0072b1",
                                 fontSize: "5rem",
+                                cursor: "pointer",
+
                                 "&:hover": {
                                     borderRadius: "0.5rem",
                                     backgroundColor: "#0072b1",
-                                    color: `${isDarkMode ? "white" : "black"}`,
-                                    cursor: "pointer"
+                                    color: `${isDarkMode ? "black" : "white"}`
                                 }
                             }}
                         />
@@ -100,11 +101,12 @@ export const Profile: FC = () => {
                             sx={{
                                 color: `${isDarkMode ? "white" : "black"}`,
                                 fontSize: "5rem",
+                                cursor: "pointer",
+
                                 "&:hover": {
                                     borderRadius: "0.5rem",
                                     backgroundColor: `${isDarkMode ? "white" : "black"}`,
-                                    color: `${isDarkMode ? "black" : "white"}`,
-                                    cursor: "pointer"
+                                    color: `${isDarkMode ? "black" : "white"}`
                                 }
                             }}
                         />
