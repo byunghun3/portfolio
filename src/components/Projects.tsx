@@ -12,10 +12,6 @@ interface SliderProps {
     newSlideOrder: number
 }
 
-interface ProjectProps {
-    profileHash: string
-}
-
 const Page = styled.div`
     display: flex;
     flex-direction: column;
@@ -215,7 +211,7 @@ const Code = styled.button`
     }
 `;
 
-export const Projects: FC<ProjectProps> = ({ profileHash }) => {
+export const Projects: FC = () => {
     const { isDarkMode } = useContext(ThemeContext);
     const [slideOrder, setSlideOrder] = useState(0);
 

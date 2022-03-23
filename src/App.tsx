@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React from "react";
 import { Profile } from "./components/Profile";
 import { Projects } from "./components/Projects";
 import { Story } from "./components/Story";
@@ -14,25 +13,9 @@ const Container = styled.div`
   overflow-y: scroll;
 
   @media (max-height: 599px), (max-width: 600px) {
-    // min-height: 100vh;
-    // display: block;
     scroll-snap-type: none;
     overflow-y: visible;
-    // background-color: purple;
   }
-
-  // @media (max-width: 499px) {
-  //   min-height: 100vh;
-    // scroll-snap-type: none;
-    // overflow-y: visible;
-  // }
-`;
-
-const Section = styled.div`
-      display: flex;
-    flex-direction: column;
-    // min-height: 100vh;
-  // scroll-snap-align: start;
 `;
 
 function App() {
@@ -40,21 +23,9 @@ function App() {
     <ThemeProvider>
       <div className="App">
         <Container>
-          {/* <Section id="profile"> */}
-          {/* a */}
           <Profile />
-          {/* </Section> */}
-          {/* <Section id="projects"> */}
-          {/* b */}
-          <Projects
-            profileHash="#profile"
-          />
-          {/* </Section> */}
-          {/* <Section id="story"> */}
-          <Story
-            profileHash="#profile"
-          />
-          {/* </Section> */}
+          <Projects />
+          <Story profileHash="#profile" />
         </Container>
       </div>
     </ThemeProvider>
