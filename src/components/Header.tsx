@@ -28,6 +28,19 @@ const Navbar = styled.div`
   transition: ease 0.3s;
 `;
 
+const ThemeSwitch = styled.div`
+  flex: 0.3;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 2rem;
+
+  @media (max-width: 875px) {
+    flex: 1;
+    justify-content: flex-start;
+  }
+`;
+
 const Contact = styled.div`
   flex: 2;
   display: flex;
@@ -60,7 +73,7 @@ const Email = styled.div`
 const NavLinks = styled.div`
   flex: 2;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   padding: 0 1.5rem;
   color: ${(props) => props.isDarkMode ? "black" : "white"};
@@ -89,18 +102,6 @@ const LinkButton = styled.button`
 
   @media (max-width: 480px) {
     font-size: 4rem;
-  }
-`;
-
-const ThemeSwitch = styled.div`
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-
-  @media (max-width: 875px) {
-    justify-content: flex-start;
-    padding-left: 2rem;
   }
 `;
 
@@ -145,11 +146,30 @@ export const Header: FC<HeaderProps> = ({ projectsHash, storyHash }) => {
       <Navbar
         isDarkMode={isDarkMode}
       >
+        <ThemeSwitch>
+          {isDarkMode ?
+            <DarkModeIcon
+              sx={{
+                marginRight: "0.7rem",
+                fontSize: "2.7rem"
+              }}
+            /> :
+            <LightModeIcon
+              sx={{
+                marginRight: "0.7rem",
+                fontSize: "2.7rem"
+              }}
+            />}
+          <Switch
+            color="primary"
+            onChange={() => { setIsDarkMode(!isDarkMode); }}
+          />
+        </ThemeSwitch>
         <Contact>
           <Phone>
             <PhoneIcon
               sx={{
-                margin: "0 0.7rem 0 0",
+                marginRight: "0.7rem",
                 fontSize: "2.5rem"
               }}
             />
@@ -158,7 +178,7 @@ export const Header: FC<HeaderProps> = ({ projectsHash, storyHash }) => {
           <Email>
             <EmailIcon
               sx={{
-                margin: "0 0.7rem 0 0",
+                marginRight: "0.7rem",
                 fontSize: "2.5rem"
               }}
             />
@@ -187,25 +207,6 @@ export const Header: FC<HeaderProps> = ({ projectsHash, storyHash }) => {
             </LinkButton>
           </NavHashLink>
         </NavLinks>
-        <ThemeSwitch>
-          <Switch
-            color="primary"
-            onChange={() => { setIsDarkMode(!isDarkMode); }}
-          />
-          {isDarkMode ?
-            <DarkModeIcon
-              sx={{
-                margin: "0 4rem 0 0.7rem",
-                fontSize: "2.7rem"
-              }}
-            /> :
-            <LightModeIcon
-              sx={{
-                margin: "0 4rem 0 0.7rem",
-                fontSize: "2.7rem"
-              }}
-            />}
-        </ThemeSwitch>
         <MenuContainer>
           <MenuIcon
             onClick={handleExpandMenu}
@@ -277,7 +278,7 @@ export const Header: FC<HeaderProps> = ({ projectsHash, storyHash }) => {
         <Phone>
           <PhoneIcon
             sx={{
-              margin: "0 0.7rem 0 0",
+              marginRight: "0.7rem",
               fontSize: "2.5rem",
               "@media (max-width: 480px)": {
                 fontSize: "3.5rem"
@@ -289,7 +290,7 @@ export const Header: FC<HeaderProps> = ({ projectsHash, storyHash }) => {
         <Email>
           <EmailIcon
             sx={{
-              margin: "0 0.7rem 0 0",
+              marginRight: "0.7rem",
               fontSize: "2.5rem",
               "@media (max-width: 480px)": {
                 fontSize: "3.5rem"
