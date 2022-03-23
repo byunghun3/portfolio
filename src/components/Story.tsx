@@ -10,122 +10,116 @@ interface StoryProps {
 }
 
 const Page = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    min-height: 100vh;
-    background-color: ${(props) => props.isDarkMode ? "black" : "white"};
-    color: ${(props) => props.isDarkMode ? "white" : "black"};
-    scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 100vh;
+  background-color: ${(props) => props.isDarkMode ? "black" : "white"};
+  color: ${(props) => props.isDarkMode ? "white" : "black"};
+  scroll-snap-align: start;
 
-    @media (max-width: 800px) {
-      // scroll-snap-align: center;
-    }
+  @media (max-width: 600px) {
+      margin-top: 5rem;
+  }
 `;
 
 const PageTitle = styled.div`
-    flex: 1;
-    margin-top: 2.5rem;
-    font-family: "Russo One";
-    font-size: 4rem;
+  flex: 1;
+  margin-top: 2.5rem;
+  font-family: "Russo One";
+  font-size: 4rem;
 `;
 
 const Content = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 70vh;
-    width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+  width: 90%;
+  margin-top: 2rem;
+  border-radius: 2rem;
+  box-shadow: 0 0 2rem rgb(185, 205, 255);
+
+  @media (max-width: 900px) {
+    display: inline-block;
     margin-top: 2rem;
-    // border: solid black;
-    border-radius: 2rem;
-    box-shadow: 0 0 2rem rgb(185, 205, 255);
+  }
 
-    @media (max-width: 900px) {
-      // flex-direction: column;
-      display: inline-block;
-      margin-top: 2rem;
-    }
-
-    @media (max-width: 600px) {
-      display: flex;
-      flex-direction: column;
-    }
+  @media (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 const Photo = styled.div`
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    @media (max-width: 900px) {
-      display: inline;
-    }
+  @media (max-width: 900px) {
+    display: inline;
+  }
 `;
 
 const ProPic = styled.img`
-    width: 78%;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-    border-radius: 0.5rem;
+  width: 78%;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: 0.5rem;
 
-    @media (max-width: 900px) {
-      float: left;
-      width: 50%;
-      margin-top: 2rem;
-      margin-right: 2rem;
-      margin-bottom: 1rem;
-      margin-left: 2rem;
-      // shape-outside: margin-box;
-    }
+  @media (max-width: 900px) {
+    float: left;
+    width: 50%;
+    margin-top: 2rem;
+    margin-right: 2rem;
+    margin-bottom: 1rem;
+    margin-left: 2rem;
+  }
 
-    @media (max-width: 600px) {
-      float: none;
-      margin-right: 0;
-      margin-bottom: 0;
-      margin-left: 0;
-    }
+  @media (max-width: 600px) {
+    float: none;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+  }
 `;
 
 const About = styled.div`
-    flex: 1;
-    padding: 1.5rem;
-    text-align: left;
-    font-family: "Verdana", "Inter", "Helvetica Neue";
-    // font-family: "Helvetica Neue";
-    // font-family: sans-serif;
-    font-size: 1.7rem;
+  flex: 1;
+  padding: 1.5rem;
+  text-align: left;
+  font-family: "Verdana", "Inter", "Helvetica Neue";
+  font-size: 1.7rem;
 
-    @media (max-width: 910px) {
-      // margin-left: 1rem;
-      font-size: 1.5rem;
-    }
+  @media (max-width: 910px) {
+    font-size: 1.5rem;
+  }
 `;
 
 const ScrollContainer = styled.div`
-    width: 90%;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    // border: solid orange;
+  width: 90%;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 `;
 
 const ScrollButton = styled.button`
-    float: right;
-    margin-right: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: none;
-    background: none;
-    color: ${(props) => props.isDarkMode ? "white" : "black"};
-    font-family: "Josefin Sans";
-    font-size: 2rem;
-    &:hover {
-        transform: scale(1.25);
-        cursor: pointer;
-    }
+  float: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 2rem;
+  border: none;
+  background: none;
+  color: ${(props) => props.isDarkMode ? "white" : "black"};
+  font-family: "Josefin Sans";
+  font-size: 2rem;
+  cursor: pointer;
+  
+  &:hover {
+    transform: scale(1.25);
+  }
 `;
 
 export const Story: FC<StoryProps> = ({ profileHash }) => {
