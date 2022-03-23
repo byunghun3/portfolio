@@ -1,7 +1,4 @@
 import React, { FC, useContext, useState } from "react";
-import { NavHashLink } from "react-router-hash-link";
-import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
-import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { ThemeContext } from "../contexts/ThemeContext";
@@ -19,12 +16,6 @@ interface ProjectProps {
     profileHash: string
 }
 
-const FullPage = styled.div`
-    min-height: 100vh;
-    scroll-snap-align: start;
-
-`;
-
 const Page = styled.div`
     display: flex;
     flex-direction: column;
@@ -35,8 +26,8 @@ const Page = styled.div`
     color: ${(props) => props.isDarkMode ? "white" : "black"};
     scroll-snap-align: start;
 
-    @media (max-width: 1000px) {
-        // justify-content: center;
+    @media (max-width: 600px) {
+        margin-top: 5rem;
     }
 `;
 
@@ -56,13 +47,9 @@ const ProjectsCards = styled.div<SliderProps>`
     display: flex;
     justify-content: space-around;
     align-items: center;
-    // min-height: 100vh;
-    // max-width: 100%;
     width: 100%;
-    // border: solid blue;
 
     @media (max-width: 1000px) {
-        // flex-direction: column;
         position: relative;
         justify-content: flex-start;
         max-width: 100%;
@@ -75,9 +62,6 @@ const ProjectsCards = styled.div<SliderProps>`
 `;
 
 const Slider = styled.div`
-    // display: none;
-    // min-height: 100vh;
-
     @media (max-width: 1000px) {
         display: flex;
         justify-content: space-between;
@@ -93,14 +77,10 @@ const Card = styled.div`
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    // height: 65vh;
     min-height: 45rem;
-    // min-height: 65vh;
     width: 25vw;
-    // border: solid #F8F8FF 0.4rem;
     margin-top: -5rem;
     border-radius: 2rem;
-    // box-shadow: 0.2rem 0.2rem 2rem 0.2rem rgb(185, 205, 255);
     box-shadow: 0 0 2rem rgb(185, 205, 255);
 
     @media (max-width: 1000px) {
@@ -138,7 +118,6 @@ const ProjectImg = styled.img`
     margin-top: -3rem;
     height: auto;
     width: 95%;
-    // width: 35rem;
     border-radius: 0.5rem;
 
     @media (max-width: 1000px) {
@@ -153,33 +132,23 @@ const Stack = styled.div`
     align-items: center;
     width: 100%;
     font-size: 1.8rem;
-    // border: solid black;
     text-align: center;
 
     div {
-        // margin: 0.8rem 2.5rem;
         flex-basis: 30%;
         display: flex;
         justify-content: center;
         align-items: center;
         margin: 0.8rem;
         text-align: center;
-        // border: solid green;
-        // color: red;
     }
 
     @media (max-width: 1000px) {
-        // justify-content: space-around;
-        // margin-top: -1rem;
         font-size: 2.2rem;
 
         div {
             margin: 1rem 1.5rem;
         }
-    }
-
-    @media (max-height: 599px) {
-        // display: none;
     }
 `;
 
@@ -188,36 +157,26 @@ const Buttons = styled.div`
     justify-content: center;
     align-items: center;
     width: 100%;
-
-    > a {
-        // width: 100%;
-        // border: solid red;
-    }
 `;
 
 const Demo = styled.button`
     height: 5rem;
-    // width: 55%;
     width: 10rem;
     margin: 0 1.5rem;
-    // margin: 0 0.7rem;
     border: solid ${(props) => props.isDarkMode ? "white" : "black"} 0.2rem;
     border-radius: 0.3rem;
     background-color: ${(props) => props.isDarkMode ? "black" : "white"};
     color: ${(props) => props.isDarkMode ? "white" : "black"};
     font-family: "Josefin Sans";
     font-size: 2rem;
+    cursor: pointer;
     
     &:hover {
         background-color: ${(props) => props.isDarkMode ? "white" : "black"};
         color: ${(props) => props.isDarkMode ? "black" : "white"};
-        cursor: pointer;
     }
 
     @media (max-width: 1000px) {
-        // min-height: 7rem;
-        // width: 12rem;
-        // margin: 0 0.7rem;
         font-size: 2.3rem;
     }
 
@@ -232,24 +191,20 @@ const Code = styled.button`
     height: 5rem;
     width: 10rem;
     margin: 0 1.5rem;
-    // margin: 0 0.7rem;
     border: solid ${(props) => props.isDarkMode ? "white" : "black"} 0.2rem;
     border-radius: 0.3rem;
     background-color: ${(props) => props.isDarkMode ? "black" : "white"};
     color: ${(props) => props.isDarkMode ? "white" : "black"};
     font-family: "Josefin Sans";
     font-size: 2rem;
+    cursor: pointer;
     
     &:hover {
         background-color: ${(props) => props.isDarkMode ? "white" : "black"};
         color: ${(props) => props.isDarkMode ? "black" : "white"};
-        cursor: pointer;
     }
 
     @media (max-width: 1000px) {
-        // height: 7rem;
-        // width: 12rem;
-        // margin: 0 0.2rem;
         font-size: 2.3rem;
     }
 
@@ -257,53 +212,6 @@ const Code = styled.button`
         min-height: 2rem;
         width: 7rem;
         font-size: 2rem;
-    }
-`;
-
-const ScrollContainer = styled.div`
-    width: 90%;
-    // margin-top: 3rem;
-    margin-bottom: 3rem;
-    // border: solid orange;
-`;
-
-const ScrollUpButton = styled.button`
-    // position: absolute;
-    // right: 5%;
-    // bottom: -95%;
-    float: right;
-    margin-right: 2rem;
-    border: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: none;
-    color: ${(props) => props.isDarkMode ? "white" : "black"};
-    font-family: "Josefin Sans";
-    font-size: 2rem;
-    &:hover {
-        transform: scale(1.25);
-        cursor: pointer;
-    }
-`;
-
-const ScrollDownButton = styled.button`
-    // position: absolute;
-    // right: 5%;
-    // bottom: -95%;
-    float: right;
-    margin-right: 2rem;
-    border: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: none;
-    color: ${(props) => props.isDarkMode ? "white" : "black"};
-    font-family: "Josefin Sans";
-    font-size: 2rem;
-    &:hover {
-        transform: scale(1.25);
-        cursor: pointer;
     }
 `;
 
@@ -328,7 +236,6 @@ export const Projects: FC<ProjectProps> = ({ profileHash }) => {
     };
 
     return (
-        // <FullPage>
         <Page id="projects" isDarkMode={isDarkMode}>
             <PageTitle>Projects</PageTitle>
             <ProjectsCards>
@@ -339,13 +246,9 @@ export const Projects: FC<ProjectProps> = ({ profileHash }) => {
                         sx={{
                             display: "none",
                             "@media (max-width: 1000px)": {
-                                // position: "absolute",
                                 zIndex: "1",
-                                // top: "50%",
-                                // left: "0",
                                 display: "flex",
                                 margin: "0 1rem",
-                                // margin: "0 1rem",
                                 fontSize: "2rem",
                                 cursor: "pointer"
                             }
@@ -374,10 +277,7 @@ export const Projects: FC<ProjectProps> = ({ profileHash }) => {
                         sx={{
                             display: "none",
                             "@media (max-width: 1000px)": {
-                                // position: "absolute",
                                 zIndex: "1",
-                                // top: "50%",
-                                // right: "0",
                                 display: "flex",
                                 margin: "0 1rem",
                                 fontSize: "2rem",
@@ -392,10 +292,7 @@ export const Projects: FC<ProjectProps> = ({ profileHash }) => {
                         sx={{
                             display: "none",
                             "@media (max-width: 1000px)": {
-                                // position: "absolute",
                                 zIndex: "1",
-                                // top: "50%",
-                                // left: "0",
                                 display: "flex",
                                 margin: "0 1rem",
                                 fontSize: "2rem",
@@ -424,10 +321,7 @@ export const Projects: FC<ProjectProps> = ({ profileHash }) => {
                         sx={{
                             display: "none",
                             "@media (max-width: 1000px)": {
-                                // position: "absolute",
                                 zIndex: "1",
-                                // top: "50%",
-                                // right: "0",
                                 display: "flex",
                                 margin: "0 1rem",
                                 fontSize: "2rem",
@@ -442,10 +336,7 @@ export const Projects: FC<ProjectProps> = ({ profileHash }) => {
                         sx={{
                             display: "none",
                             "@media (max-width: 1000px)": {
-                                // position: "absolute",
                                 zIndex: "1",
-                                // top: "50%",
-                                // left: "0",
                                 display: "flex",
                                 margin: "0 1rem",
                                 fontSize: "2rem",
@@ -475,10 +366,7 @@ export const Projects: FC<ProjectProps> = ({ profileHash }) => {
                         sx={{
                             display: "none",
                             "@media (max-width: 1000px)": {
-                                // position: "absolute",
                                 zIndex: "1",
-                                // top: "50%",
-                                // right: "0",
                                 display: "flex",
                                 margin: "0 1rem",
                                 fontSize: "2rem",
@@ -487,19 +375,6 @@ export const Projects: FC<ProjectProps> = ({ profileHash }) => {
                         }} />
                 </Slider>
             </ProjectsCards>
-            {/* <ScrollContainer>
-                <NavHashLink smooth to={profileHash}>
-                    <ScrollDownButton type="button" onClick={handleClick} isDarkMode={isDarkMode}>
-                        <ArrowUpwardIcon
-                            sx={{
-                                fontSize: "3rem"
-                            }}
-                        />
-                        Profile
-                    </ScrollDownButton>
-                </NavHashLink>
-            </ScrollContainer> */}
         </Page>
-        // </FullPage>
     );
 };
