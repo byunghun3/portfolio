@@ -41,7 +41,7 @@ const Content = styled.div`
   border-radius: 2rem;
   box-shadow: 0 0 2rem rgb(185, 205, 255);
 
-  @media (max-width: 900px) {
+  @media (max-width: 1050px) {
     display: inline-block;
     margin-top: 2rem;
   }
@@ -58,7 +58,7 @@ const Photo = styled.div`
   justify-content: center;
   align-items: center;
 
-  @media (max-width: 900px) {
+  @media (max-width: 1050px) {
     display: inline;
   }
 `;
@@ -69,7 +69,7 @@ const ProPic = styled.img`
   margin-bottom: 0.5rem;
   border-radius: 0.5rem;
 
-  @media (max-width: 900px) {
+  @media (max-width: 1050px) {
     float: left;
     width: 50%;
     margin-top: 2rem;
@@ -93,7 +93,7 @@ const About = styled.div`
   font-family: "Verdana", "Inter", "Helvetica Neue";
   font-size: 1.7rem;
 
-  @media (max-width: 910px) {
+  @media (max-width: 1050px) {
     font-size: 1.5rem;
   }
 `;
@@ -139,10 +139,10 @@ export const Story: FC<StoryProps> = ({ profileHash }) => {
           <ProPic src={ProfilePic} />
         </Photo>
         <About>
-          <p>My interest in programming started when I noticed how much easier and more efficient technology made the day-to-day work at my job.</p>
-          <p>Learning web development was daunting at first, but I quickly realized that it was similar to studying and practicing a language.</p>
-          <p>With my capabilities for project-based work as a project manager and my passion for analyzing and expressing through language as an English major at college, I fell in love with the process of learning to code and develop websites.</p>
-          <p>My projects reflect a few of my passions - books and golf - and demonstrate my creativity, attention to detail, and willingness to challenge myself.</p>
+          <p>My interest in programming started when I noticed how much the excel macros the engineering team created made my day-to-day work easier as a project manager.</p>
+          <p>Learning web development was daunting at first, but I was motivated by the large growth potential in the industry and the ownership I felt after each project.</p>
+          <p>From struggling to figure out how to position a div in a flexbox to hitting wall after wall trying to code for the first time using React functional components and Typescript together, I fell in love with the process of researching and problem solving in coding.</p>
+          <p>My projects reflect a few of my passions - reading and golfing - and demonstrate my creativity, attention to detail, and willingness to challenge myself.</p>
           <p>I find it exciting that web development is a continuous learning journey. For my future projects, I hope to learn and incorporate a back end with Node.js and a new framework with Next.js.</p>
         </About>
       </Content>
