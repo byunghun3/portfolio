@@ -78,10 +78,10 @@ export const Profile: FC = () => {
                 <Greeting>Hello, I&apos;m Byung-Hun Kim</Greeting>
                 <Intro>A self-taught front-end developer.<br /><br /> Hungry to learn, challenge, and create.</Intro>
                 <Links>
-                    <a href={ResumePDF} target="_blank" rel="noopener noreferrer">
+                    <a aria-label="Resume" href={ResumePDF} target="_blank" rel="noopener noreferrer">
                         <Resume type="button" isDarkMode={isDarkMode}>Resume</Resume>
                     </a>
-                    <a href={"https://www.linkedin.com/in/byung-hun-kim-a3809a143/"} target="_blank" rel="noopener noreferrer">
+                    <a aria-label="LinkedIn" href={"https://www.linkedin.com/in/byung-hun-kim-a3809a143/"} target="_blank" rel="noopener noreferrer">
                         <LinkedInIcon
                             sx={{
                                 color: "#0072b1",
@@ -96,7 +96,7 @@ export const Profile: FC = () => {
                             }}
                         />
                     </a>
-                    <a href={"https://github.com/byunghun3"} target="_blank" rel="noopener noreferrer">
+                    <a aria-label="Github" href={"https://github.com/byunghun3"} target="_blank" rel="noopener noreferrer">
                         <GitHubIcon
                             sx={{
                                 color: `${isDarkMode ? "white" : "black"}`,

@@ -259,10 +259,10 @@ export const Projects: FC = () => {
                             <div>MUI</div>
                         </Stack>
                         <Buttons>
-                            <a href="https://byunghun3.github.io/revd-bookstore/" target="_blank" rel="noopener noreferrer">
+                            <a aria-label="Revd Bookstore Demo" href="https://byunghun3.github.io/revd-bookstore/" target="_blank" rel="noopener noreferrer">
                                 <Demo type="button" isDarkMode={isDarkMode}>Demo</Demo>
                             </a>
-                            <a href="https://github.com/byunghun3/revd-bookstore" target="_blank" rel="noopener noreferrer">
+                            <a aria-label="Revd Bookstore Code" href="https://github.com/byunghun3/revd-bookstore" target="_blank" rel="noopener noreferrer">
                                 <Code type="button" isDarkMode={isDarkMode}>Code</Code>
                             </a>
                         </Buttons>
@@ -301,12 +301,13 @@ export const Projects: FC = () => {
                         <Stack>
                             <div>React (class components)</div>
                             <div>SASS</div>
+                            <div>Jest</div>
                         </Stack>
                         <Buttons>
-                            <a href="https://byunghun3.github.io/golf-course-weather/" target="_blank" rel="noopener noreferrer">
+                            <a aria-label="Golf Course Weather Demo" href="https://byunghun3.github.io/golf-course-weather/" target="_blank" rel="noopener noreferrer">
                                 <Demo type="button" isDarkMode={isDarkMode}>Demo</Demo>
                             </a>
-                            <a href="https://github.com/byunghun3/golf-course-weather" target="_blank" rel="noopener noreferrer">
+                            <a aria-label="Golf Course Weather Code" href="https://github.com/byunghun3/golf-course-weather" target="_blank" rel="noopener noreferrer">
                                 <Code type="button" isDarkMode={isDarkMode}>Code</Code>
                             </a>
                         </Buttons>
@@ -346,12 +347,13 @@ export const Projects: FC = () => {
                             <div>React</div>
                             <div>Typescript</div>
                             <div>Styled-Components</div>
+                            <div>Jest</div>
                         </Stack>
                         <Buttons>
-                            <a href="https://byunghun3.github.io/byunghun3/portfolio" target="_blank" rel="noopener noreferrer">
+                            <a aria-label="Portfolio Demo" href="https://byunghun3.github.io/byunghun3/portfolio" target="_blank" rel="noopener noreferrer">
                                 <Demo type="button" isDarkMode={isDarkMode}>Demo</Demo>
                             </a>
-                            <a href="https://github.com/byunghun3/portfolio" target="_blank" rel="noopener noreferrer">
+                            <a aria-label="Portfolio Code" href="https://github.com/byunghun3/portfolio" target="_blank" rel="noopener noreferrer">
                                 <Code type="button" isDarkMode={isDarkMode}>Code</Code>
                             </a>
                         </Buttons>
