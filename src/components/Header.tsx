@@ -209,6 +209,7 @@ export const Header: FC<HeaderProps> = ({ projectsHash, storyHash }) => {
         </NavLinks>
         <MenuContainer>
           <MenuIcon
+            aria-label="Menu Icon"
             onClick={handleExpandMenu}
             sx={{
               fontSize: "4.5rem",
@@ -216,8 +217,9 @@ export const Header: FC<HeaderProps> = ({ projectsHash, storyHash }) => {
             }}
           />
         </MenuContainer>
-      </Navbar >
+      </Navbar>
       <Drawer
+        aria-label="Drawer Menu"
         anchor="right"
         open={isExpanded}
         onClose={handleCloseMenu}
@@ -246,6 +248,7 @@ export const Header: FC<HeaderProps> = ({ projectsHash, storyHash }) => {
       >
         <ClearContainer>
           <ClearIcon
+            aria-label="Close Icon"
             onClick={handleCloseMenu}
             sx={{
               marginTop: "1.2rem",
