@@ -20,5 +20,4 @@ test("open and close drawer menu", () => {
     const closeIconElement = screen.getByLabelText("Close Icon");
     fireEvent.click(closeIconElement);
     expect(drawerMenuElement).toHaveAttribute("aria-hidden", "true");
-    // expect(drawerMenuElement).not.toBeVisible();
 });
