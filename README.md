@@ -1,46 +1,58 @@
-# Getting Started with Create React App
+# Golf Course Weather
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This app showcases my resume, profile, coding projects, and story behind pursuing web development.
 
-## Available Scripts
 
-In the project directory, you can run:
+## Live Demo
 
-### `npm start`
+https://byunghun3.github.io/byunghun3/portfolio/
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Technologies
 
-### `npm test`
+This project was created with:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* React.js
+* Typescript
+* Styled-components
+* Material UI
+* Jest
+* ESLint
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Usage
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![portfolio-light](./src/assets/images/portfolio-light.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![portfolio-dark](./src/assets/images/portfolio-dark.png)
 
-### `npm run eject`
+The main profile section contains an introduction, my phone and email contact info and links to my PDF resume, LinkedIn, and Github pages.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+The nav bar also includes a toggle to switch between light and dark mode and links to Projects and Story sections.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+![portfolio-projects](./src/assets/images/portfolio-projects.png)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+The Projects section displays my first three react projects: Revd Bookstore, Golf Course Weather, and Portfolio apps. 
 
-## Learn More
+Each project card contains a screenshot of the main page, a list of tech stacks used, and links to the live demo site and github code page.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![portfolio-story](./src/assets/images/portfolio-story.png)
+
+The Story section contains a brief story behind my web development journey and a button for scrolling all the way to the top of the page in the bottom right corner. 
+
+
+## Reflection
+
+My goal for this project was to build an app to introduce my web development journey and display my profile and projects.
+
+I also treated this project as further practice for developing react apps.  
+
+I paid attention to detail for this single-page app. Upon clicking any of the three hash links ("Projects" and "Story" in navbar, and "Back to Top" at the bottom of the page) and navigating to each section, I called the history.pushState() method to remove any changes to the URL. 
+
+I was also careful with how I handled the scroll snap with responsiveness in mind, making sure that when the window size shrank, the snap didn't hide any content.   
+
+Because adding tests at the end had me incorporating aria-labels to some elements, it got me thinking more about using them more often for both testing and SEO. 
+
+This being my third react project, I reazlied how much more proficient and efficient with react and other complementary libraries I've become. For future projects, I hope to learn about incorporating a back end with Node.js.
