@@ -350,7 +350,7 @@ export const Projects: FC = () => {
                             <div>Jest</div>
                         </Stack>
                         <Buttons>
-                            <a aria-label="Portfolio Demo" href="https://byunghun3.github.io/byunghun3/portfolio" target="_blank" rel="noopener noreferrer">
+                            <a aria-label="Portfolio Demo" href="https://byunghun3.github.io/portfolio/" target="_blank" rel="noopener noreferrer">
                                 <Demo type="button" isDarkMode={isDarkMode}>Demo</Demo>
                             </a>
                             <a aria-label="Portfolio Code" href="https://github.com/byunghun3/portfolio" target="_blank" rel="noopener noreferrer">
