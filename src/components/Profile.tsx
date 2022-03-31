@@ -81,7 +81,7 @@ export const Profile: FC = () => {
                     <a aria-label="Resume" href={ResumePDF} target="_blank" rel="noopener noreferrer">
                         <Resume type="button" isDarkMode={isDarkMode}>Resume</Resume>
                     </a>
-                    <a aria-label="LinkedIn" href={"www.linkedin.com/in/byung-hun-kim"} target="_blank" rel="noopener noreferrer">
+                    <a aria-label="LinkedIn" href={"https://www.linkedin.com/in/byung-hun-kim/"} target="_blank" rel="noopener noreferrer">
                         <LinkedInIcon
                             sx={{
                                 color: "#0072b1",
