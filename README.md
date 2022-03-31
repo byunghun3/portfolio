@@ -26,14 +26,13 @@ This project was created with:
 ## Usage
 
 Light Mode
-
 ![portfolio-light](./src/assets/images/portfolio-light.png)
 
 
 Dark Mode
 ![portfolio-dark](./src/assets/images/portfolio-dark.png)
 
-The main profile section contains an introduction, my phone and email contact info and links to my PDF resume, LinkedIn, and Github pages.
+The main profile section contains an introduction, my phone and email contact, and links to my PDF resume, LinkedIn, and Github pages.
 
 The nav bar also includes a toggle to switch between light and dark mode and links to Projects and Story sections.
 
@@ -42,7 +41,7 @@ The nav bar also includes a toggle to switch between light and dark mode and lin
 
 The Projects section displays my first three React projects: Revd Bookstore, Golf Course Weather, and Portfolio apps. 
 
-Each project card contains a screenshot of the main page, a list of tech stacks used, and links to the live demo site and github code page.
+Each project card contains a screenshot of the main page, a list of tech stacks used, and links to the live demo site and Github code page.
 
 
 ![portfolio-story](./src/assets/images/portfolio-story.png)
@@ -61,6 +60,6 @@ I paid particular attention to visual or styling details for this single-page ap
 
 I was also careful with how I handled the scroll snap with responsiveness in mind, making sure that when the window size shrank, the snap didn't hide any content.   
 
-Because adding tests at the end had me incorporating aria-labels to some elements, it got me thinking more about using them more often for both testing, SEO, and accessibility. 
+Because adding tests at the end had me incorporating aria-labels to some elements, it got me thinking more about using them more often for both testing, SEO, and accessibility purposes. This will be an important skill to develop for my professional career.
 
 This being my third React project, I reazlied how much more proficient and efficient with React and other complementary libraries I've become. For future projects, I hope to learn about incorporating a back end with Node.js.
