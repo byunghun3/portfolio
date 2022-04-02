@@ -62,4 +62,6 @@ I was also careful with how I handled the scroll snap with responsiveness in min
 
 Because adding tests at the end had me incorporating aria-labels to some elements, it got me thinking more about using them more often for both testing, SEO, and accessibility purposes. This will be an important skill to develop for my professional career.
 
-This being my third React project, I reazlied how much more proficient and efficient with React and other complementary libraries I've become. For future projects, I hope to learn about incorporating a back end with Node.js.
+This being my third React project, I reazlied how much more proficient and efficient with React and other complementary libraries I've become. 
+
+For the next project, I want to learn about incorporating a back end with Node.js. Another long-term goal is to learn and use Next.js to build an app.
