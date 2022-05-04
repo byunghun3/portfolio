@@ -4,8 +4,7 @@ import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { ThemeContext } from "../contexts/ThemeContext";
 import RevdBookstore from "../assets/images/revd-bookstore.png";
 import GolfCourseWeather from "../assets/images/golf-course-weather.png";
-import PortfolioDark from "../assets/images/portfolio-dark.png";
-import PortfolioLight from "../assets/images/portfolio-light.png";
+import NationalParkFinder from "../assets/images/national-park-finder.png";
 import styled from "styled-components";
 
 interface SliderProps {
@@ -215,19 +214,11 @@ export const Projects: FC = () => {
     const { isDarkMode } = useContext(ThemeContext);
     const [slideOrder, setSlideOrder] = useState(0);
 
-    const handleClick = () => {
-        setTimeout(() => {
-            history.pushState("", document.title, window.location.pathname + window.location.search);
-        }, 1);
-    };
-
     const handleSlide = (e: React.MouseEvent<any>) => {
         if (e.currentTarget.id === "left") {
             setSlideOrder(slideOrder > 0 ? slideOrder - 1 : 2);
-            console.log("left");
         } else {
             setSlideOrder(slideOrder < 2 ? slideOrder + 1 : 0);
-            console.log("right");
         }
     };
 
@@ -235,6 +226,52 @@ export const Projects: FC = () => {
         <Page id="projects" isDarkMode={isDarkMode}>
             <PageTitle>Projects</PageTitle>
             <ProjectsCards>
+                <Slider newSlideOrder={slideOrder}>
+                    <ArrowBackIosIcon
+                        id="left"
+                        onClick={handleSlide}
+                        sx={{
+                            display: "none",
+                            "@media (max-width: 1000px)": {
+                                zIndex: "1",
+                                display: "flex",
+                                margin: "0 1rem",
+                                fontSize: "2rem",
+                                cursor: "pointer"
+                            }
+                        }} />
+                    <Card>
+                        <Title>National Park Finder</Title>
+                        <ProjectImg src={NationalParkFinder} />
+                        <Stack>
+                            <div>React</div>
+                            <div>Express</div>
+                            <div>MongoDB</div>
+                            <div>JWT</div>
+                        </Stack>
+                        <Buttons>
+                            <a aria-label="National Park Finder Demo" href="https://byunghun3.github.io/national-park-finder/" target="_blank" rel="noopener noreferrer">
+                                <Demo type="button" isDarkMode={isDarkMode}>Demo</Demo>
+                            </a>
+                            <a aria-label="National Park Finder Code" href="https://github.com/byunghun3/national-park-finder" target="_blank" rel="noopener noreferrer">
+                                <Code type="button" isDarkMode={isDarkMode}>Code</Code>
+                            </a>
+                        </Buttons>
+                    </Card>
+                    <ArrowForwardIosIcon
+                        id="right"
+                        onClick={handleSlide}
+                        sx={{
+                            display: "none",
+                            "@media (max-width: 1000px)": {
+                                zIndex: "1",
+                                display: "flex",
+                                margin: "0 1rem",
+                                fontSize: "2rem",
+                                cursor: "pointer"
+                            }
+                        }} />
+                </Slider>
                 <Slider newSlideOrder={slideOrder}>
                     <ArrowBackIosIcon
                         id="left"
@@ -308,52 +345,6 @@ export const Projects: FC = () => {
                                 <Demo type="button" isDarkMode={isDarkMode}>Demo</Demo>
                             </a>
                             <a aria-label="Golf Course Weather Code" href="https://github.com/byunghun3/golf-course-weather" target="_blank" rel="noopener noreferrer">
-                                <Code type="button" isDarkMode={isDarkMode}>Code</Code>
-                            </a>
-                        </Buttons>
-                    </Card>
-                    <ArrowForwardIosIcon
-                        id="right"
-                        onClick={handleSlide}
-                        sx={{
-                            display: "none",
-                            "@media (max-width: 1000px)": {
-                                zIndex: "1",
-                                display: "flex",
-                                margin: "0 1rem",
-                                fontSize: "2rem",
-                                cursor: "pointer"
-                            }
-                        }} />
-                </Slider>
-                <Slider newSlideOrder={slideOrder}>
-                    <ArrowBackIosIcon
-                        id="left"
-                        onClick={handleSlide}
-                        sx={{
-                            display: "none",
-                            "@media (max-width: 1000px)": {
-                                zIndex: "1",
-                                display: "flex",
-                                margin: "0 1rem",
-                                fontSize: "2rem",
-                                cursor: "pointer"
-                            }
-                        }} />
-                    <Card>
-                        <Title>Portfolio</Title>
-                        <ProjectImg src={isDarkMode ? PortfolioLight : PortfolioDark} />
-                        <Stack>
-                            <div>React</div>
-                            <div>Typescript</div>
-                            <div>Styled-Components</div>
-                            <div>Jest</div>
-                        </Stack>
-                        <Buttons>
-                            <a aria-label="Portfolio Demo" href="https://byunghun3.github.io/portfolio/" target="_blank" rel="noopener noreferrer">
-                                <Demo type="button" isDarkMode={isDarkMode}>Demo</Demo>
-                            </a>
-                            <a aria-label="Portfolio Code" href="https://github.com/byunghun3/portfolio" target="_blank" rel="noopener noreferrer">
                                 <Code type="button" isDarkMode={isDarkMode}>Code</Code>
                             </a>
                         </Buttons>

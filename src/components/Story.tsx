@@ -143,7 +143,7 @@ export const Story: FC<StoryProps> = ({ profileHash }) => {
           <p>Learning web development was daunting at first, but I was motivated by the large growth potential in the industry and the ownership I felt after each project.</p>
           <p>From struggling to figure out how to position a div in a flexbox to hitting wall after wall trying to code for the first time using React functional components and Typescript together, I fell in love with the process of researching and problem solving in coding.</p>
           <p>My projects reflect a few of my passions - reading and golfing - and demonstrate my creativity, attention to detail, and willingness to challenge myself.</p>
-          <p>I find it exciting that web development is a continuous learning journey. For my future projects, I hope to learn and incorporate a back end with Node.js and a new framework with Next.js.</p>
+          <p>I find it exciting that web development is a continuous learning journey. For my future projects, I hope to learn and incorporate a new framework with Next.js.</p>
         </About>
       </Content>
       <ScrollContainer>

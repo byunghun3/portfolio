@@ -76,7 +76,7 @@ export const Profile: FC = () => {
             />
             <Content isDarkMode={isDarkMode}>
                 <Greeting>Hello, I&apos;m Byung-Hun Kim</Greeting>
-                <Intro>A self-taught front-end developer.<br /><br /> Hungry to learn, challenge, and create.</Intro>
+                <Intro>A self-taught software developer.<br /><br /> Hungry to learn, challenge, and create.</Intro>
                 <Links>
                     <a aria-label="Resume" href={ResumePDF} target="_blank" rel="noopener noreferrer">
                         <Resume type="button" isDarkMode={isDarkMode}>Resume</Resume>
