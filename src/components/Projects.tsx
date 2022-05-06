@@ -291,7 +291,7 @@ export const Projects: FC = () => {
                         <ProjectImg src={RevdBookstore} />
                         <Stack>
                             <div>React</div>
-                            <div>Typescript</div>
+                            <div>TypeScript</div>
                             <div>CSS Module</div>
                             <div>MUI</div>
                         </Stack>

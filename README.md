@@ -15,7 +15,7 @@ https://byunghun3.github.io/portfolio/
 This project was created with:
 
 * React.js
-* Typescript
+* TypeScript
 * Styled-components
 * Material UI
 * Jest
